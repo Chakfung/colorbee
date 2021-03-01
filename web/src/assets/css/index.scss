@@ -1,0 +1,128 @@
+@import '../../style';
+//导航栏
+.header {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  background-color: #fff;
+
+  justify-content: space-between;
+  min-width: 1000px;
+  //标志
+  .logo {
+
+    height: 70px;
+    width: 300px;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    margin-left: 10%;
+    font-size: 28px;
+    color: #1c5c93;
+    text-decoration: none;
+    letter-spacing: 3px;
+  }
+
+  .logo::before {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: url(../image/logo.png) no-repeat;
+    -webkit-background-size: 40px;
+    background-size: 40px;
+    margin-right: 10px;
+    letter-spacing: 10px;
+
+  }
+
+  //导航
+  .nav {
+
+ 
+    width: 500px;
+
+    margin-right: 10%;
+    ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom:0;
+      width: 500px;
+      color: #5c768d;
+      font-size: 15px;
+      font-family: "Open Sans", sans-serif;
+      li {
+        flex: 1;
+        a:hover{
+          color: #4cc6bb;
+        }
+      }
+    }
+
+  }
+}
+
+#topbar2 {
+  //display: none;
+
+  opacity: 0;
+  z-index: 999;
+}
+
+
+.main-body {
+
+  position: absolute;
+  top:70px;
+  z-index: -1;
+  width: 100%;
+
+
+}
+$tabbar-height:70px;
+
+//登录背景
+.loginbg {
+
+
+
+  overflow: hidden;
+  height: calc(100vh - #{$tabbar-height});
+
+  img {
+    position: absolute;
+    background: url(../image/login/loginbg.jpg) no-repeat ;
+    height: calc(100vh - #{$tabbar-height});
+    width: 100%;
+  }
+}
+//登录用户类型
+.choice-bottom {
+  display: flex;
+  justify-content: center;
+
+  //button:link {
+  //  color:#fbc44d;
+  //
+  //}
+  //button:visited {
+  //  color:#fbc44d;
+  //
+  //}
+  button:hover {
+    color:#fbc44d;
+
+  }
+  //button:active {
+  //  color:#fbc44d;
+  //
+  //}
+
+}
+
+.input-size {
+  font-size: 20px;
+}

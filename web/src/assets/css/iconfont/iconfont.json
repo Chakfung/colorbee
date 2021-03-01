@@ -1,0 +1,58 @@
+{
+  "id": "2347178",
+  "name": "CK",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "15273691",
+      "name": "eye",
+      "font_class": "eye",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
+      "icon_id": "14629152",
+      "name": "delete",
+      "font_class": "delete",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "9568070",
+      "name": "download",
+      "font_class": "download",
+      "unicode": "e650",
+      "unicode_decimal": 58960
+    },
+    {
+      "icon_id": "7826085",
+      "name": "close",
+      "font_class": "baseline-close-px",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "1469309",
+      "name": "star",
+      "font_class": "star",
+      "unicode": "e877",
+      "unicode_decimal": 59511
+    },
+    {
+      "icon_id": "749509",
+      "name": "SEARCH",
+      "font_class": "search",
+      "unicode": "e644",
+      "unicode_decimal": 58948
+    },
+    {
+      "icon_id": "14560643",
+      "name": "查看",
+      "font_class": "chakan",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    }
+  ]
+}

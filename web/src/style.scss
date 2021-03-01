@@ -1,0 +1,148 @@
+//样式重置
+* {
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Raleway', sans-serif;
+}
+
+html {
+  font-size:16px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, -apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif;
+  line-height: 1.2em;
+  background: #f6f6f6;
+}
+
+a {
+  color: #121212;
+  text-decoration: none;
+}
+
+//colors
+$colors:(
+  "cyan":#4cc6bb,
+  "orange":#ff632a,
+  "yellow":#fbc44d,
+  "pruple":#e5e3e8,
+  "grey":#646464,
+  "black":#121212
+);
+
+@each $colorKey,$color in $colors {
+  .text-#{$colorKey} {
+    color:$color
+  }
+
+  .background-#{$colorKey} {
+    background-color: $color
+  }
+};
+
+//text
+@each $var in (left,center,right) {
+  .text-#{$var} {
+    text-align: $var;
+  }
+}
+
+//fontsize
+$base-font-size:1rem;
+$font-sizes:(
+        xs:0.874,//14
+        md:0.9375,//15
+        lg:1,//16
+        xl:1.5//24
+);
+@each $sizeKey,$size in $font-sizes {
+  .fs-#{$sizeKey}{
+    font-size: $size*$base-font-size;
+  }
+}
+
+//flex
+.d-flex {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+$flex-jc:(
+  start: flex-start,
+  end:flex-end,
+  center:center,
+  between:space-between,
+  around:space-around
+);
+
+@each $key,$value in $flex-jc{
+  .jc-#{$key} {
+    justify-content: $value;
+  }
+}
+$flex-ai:(
+        start: flex-start,
+        end:flex-end,
+        center:center,
+        stretch:stretch
+);
+
+@each $key,$value in $flex-ai{
+  .jc-#{$key} {
+    align-items: $value;
+  }
+}
+
+//space
+$spacing-types:(m:margin,p:padding);
+$spaceing-directions:(t:top,r:right,b:bottom,l:left);
+$spacing-base-size:1rem;
+$spaceing-sizes:(0:0,1:0.25,2:0.5,3:1,4:1.5,5:3);
+
+@each $typeKey,$type in $spacing-types {
+
+   @each $sizekey,$size in $spaceing-sizes {
+      .#{$typeKey}-#{$sizekey}{
+        #{$type}:$size*$spacing-base-size
+      }
+
+     .#{$typeKey}x-#{$sizekey}{
+       #{$type}-left:$size*$spacing-base-size;
+       #{$type}-right:$size*$spacing-base-size
+     }
+     .#{$typeKey}y-#{$sizekey}{
+       #{$type}-top:$size*$spacing-base-size;
+       #{$type}-bottom:$size*$spacing-base-size
+     }
+
+
+
+    }
+
+
+
+  @each $directionKey,$direction in $spaceing-directions {
+    @each $sizekey,$size in $spaceing-sizes {
+      .#{$typeKey}#{$directionKey}-#{$sizekey}{
+        #{$type}-#{$direction}:$size*$spacing-base-size
+      }
+    }
+  }
+}

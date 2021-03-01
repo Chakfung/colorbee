@@ -1,0 +1,114 @@
+<template>
+  <div class="">
+    <h1>{{id? '编辑摄影师':'新增摄影师'}}</h1>
+    <el-form lable-width="120px" @submit.native.prevent="save">
+      <el-form-item label="名称">
+        <el-input v-model="model.name"></el-input>
+      </el-form-item>
+
+      <el-form-item label="电话">
+      <el-input v-model="model.tel"></el-input>
+    </el-form-item>
+
+      <el-form-item label="微信">
+        <el-input v-model="model.wechat"></el-input>
+      </el-form-item>
+
+      <el-form-item label="头像">
+        <el-upload
+            class="avatar-uploader"
+            :action="$http.defaults.baseURL +'/upload'"
+            :headers="getAuthHeaders()"
+            :show-file-list="false"
+            :on-success="afterUpload"
+        >
+          <img v-if="model.avatar" :src="model.avatar" class="avatar ell">
+          <i v-else class="ell el-icon-plus avatar-uploader-icon" ></i>
+        </el-upload>
+      </el-form-item>
+
+      <el-form-item label="用户名">
+        <el-input v-model="model.username"></el-input>
+      </el-form-item>
+      <el-form-item label="密码">
+        <el-input v-model="model.password"></el-input>
+      </el-form-item>
+      <el-form-item label="类型">
+        <el-input v-model="model.type"></el-input>
+      </el-form-item>
+      <el-form-item>
+        <el-button type="primary" native-type="submit">保存</el-button>
+      </el-form-item>
+    </el-form>
+  </div>
+</template>
+
+<script>
+  export default {
+    props:{
+      id:{}
+    },
+    data() {
+      return{
+        model:{}
+      }
+    },
+    methods:{
+      afterUpload(res){
+        this.$set(this.model,'avatar',res.url)
+
+      },
+      async save(){
+        let res
+        if(this.id){
+          res = await this.$http.put(`rest/photographer/${this.id}`,this.model)
+        }else{
+          res = await this.$http.post('rest/photographer',this.model)
+        }
+
+        this.$router.push('/photographer/list')
+        this.$message({
+          type:'success',
+          message:'保存成功'
+        })
+      },
+
+      async fetch(){
+        const res = await this.$http.get(`rest/photographer/${this.id}`)
+        this.model = res.data
+      }
+    },
+
+    created() {
+      this.id && this.fetch()
+    }
+  };
+</script>
+
+<style scoped>
+  .ell{
+    border: 1px dashed #d9d9d9;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    padding: 10px;
+  }
+  .ell:hover {
+    border-color: #409EFF;
+  }
+  .avatar-uploader-icon {
+    font-size: 28px;
+    color: #8c939d;
+    width: 178px;
+    height: 178px;
+    line-height: 178px;
+    text-align: center;
+  }
+  .avatar {
+    width: 178px;
+    border-radius: 5%;
+    display: block;
+  }
+</style>
+

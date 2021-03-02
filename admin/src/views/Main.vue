@@ -13,7 +13,7 @@
           <el-dropdown>
             <i class="el-icon-setting" style="margin-right: 15px ;color: #fff; font-size: 25px"></i>
             <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item>登录</el-dropdown-item>
+              <el-dropdown-item @click="gologin()">登录</el-dropdown-item>
               <el-dropdown-item>前端</el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
@@ -138,6 +138,11 @@
       return {
         open_list:['1'],
         items:[]
+      }
+    },
+    methods:{
+      gologin(){
+        this.$router.push('/login')
       }
     },
     mounted() {

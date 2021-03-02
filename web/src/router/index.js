@@ -239,7 +239,7 @@ const routes = [
 const router = new VueRouter({
   routes,
   //去掉url#
-  mode: 'history',
+  // mode: 'history',
 
 
 

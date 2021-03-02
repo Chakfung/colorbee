@@ -67,6 +67,10 @@
       }
     },
     methods:{
+
+      blogDetail(id){
+        this.$router.push(`/appointdetail/${id}`)
+      },
       async fetch(){
 
         const res = await this.$http.get(`rest/appoint_orders/${this.id}`)

@@ -12,6 +12,8 @@
       </el-table-column>
       <el-table-column prop="intro" label="简介" width="120">
       </el-table-column>
+      <el-table-column prop="parent.name" label="分类" width="120">
+      </el-table-column>
       <el-table-column prop="img" label="图片">
         <template slot-scope="scope">
           <img :src="scope.row.img[0].url" alt="" style="height: 3rem">

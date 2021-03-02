@@ -33,9 +33,9 @@
           </el-select>
         </el-form-item>
 
-        <el-form-item label="摄影师">
-          <el-select v-model="model.photographer">
-            <el-option v-for="item in photographers" :key="item._id"
+        <el-form-item label="用户">
+          <el-select v-model="model.user">
+            <el-option v-for="item in users" :key="item._id"
                        :label="item.name" :value="item._id"></el-option>
           </el-select>
         </el-form-item>
@@ -75,7 +75,7 @@
       return{
         model:{},
 
-        photographers: [],
+        users: [],
         parents:[]
       }
     },
@@ -119,15 +119,15 @@
 
 
 
-      async fetchPhotographers(){
+      async fetchUsers(){
         const res = await this.$http.get(`rest/user`)
-        this.photographers = res.data
+        this.users = res.data
       },
     },
 
     created() {
       this.fetchParents()
-      this.fetchPhotographers()
+      this.fetchUsers()
       this.id && this.fetch()
     }
   };

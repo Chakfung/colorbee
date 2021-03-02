@@ -8,7 +8,7 @@
         </a>
       </div>
 
-      <div class="content">
+      <div class="content" v-if="this.pop">
         <div class="pic">
 
           <img :src="this.pop.img" alt="">

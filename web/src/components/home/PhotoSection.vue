@@ -10,10 +10,10 @@
 
         <div class="photo">
           <div class="photo-item first">
-            <a @click="classGallery('人像肖像')">
+            <a @click="classGallery('人物肖像')">
               <div class="img" style=" background-image: url(https://s1.tuchong.com/content-image/202101/bebff324eecf12c62fe6867d501b035f.jpg);"></div>
               <div class="info">
-                <span class="info-text">人像肖像</span>
+                <span class="info-text">人物肖像</span>
                 <i class="iconfont icon-chakan"></i>
               </div>
             </a>

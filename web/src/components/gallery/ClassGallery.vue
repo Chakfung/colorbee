@@ -15,7 +15,7 @@
       <div class="content">
         <div class="waterfall__column" style=" margin-left: 0px;">
           <div class="loading-image waterfall__img-wrapper" track-by="imageId" style=" margin-bottom: 4px;" v-for="n in col" @click="photodetail(items[n-1])">
-            <img :src="items[n-1].img" alt="">
+            <img :src="items[n-1].img" alt="" v-if="items[n-1]">
             <div class="control-panel" >
               <i class="iconfont icon-eye"></i>
             </div>
@@ -39,7 +39,7 @@
 
         <div class="waterfall__column" style=" margin-left: 4px;">
           <div class="loading-image waterfall__img-wrapper" track-by="imageId" style=" margin-bottom: 4px;" v-for="n in col" @click="photodetail(items[n+col])">
-            <img :src="items[n+col-1].img" alt="">
+            <img :src="items[n+col-1].img" alt="" v-if="items[n+col-1]">
             <div class="control-panel" >
               <i class="iconfont icon-eye"></i>
             </div>
@@ -49,7 +49,7 @@
 
         <div class="waterfall__column" style=" margin-left: 4px;">
           <div class="loading-image waterfall__img-wrapper" track-by="imageId" style=" margin-bottom: 4px;" v-for="n in col" @click="photodetail(items[n+2*col-1])">
-            <img :src="items[n+2*col-1].img" alt="">
+            <img :src="items[n+2*col-1].img" alt="" v-if="items[n+2*col-1]">
             <div class="control-panel" >
               <i class="iconfont icon-eye"></i>
             </div>
@@ -58,7 +58,7 @@
 
         <div class="waterfall__column" style=" margin-left: 4px;">
           <div class="loading-image waterfall__img-wrapper" track-by="imageId" style=" margin-bottom: 4px;" v-for="n in col" @click="photodetail(items[n+3*col-1])">
-            <img :src="items[n+3*col-1].img" alt="">
+            <img :src="items[n+3*col-1].img" alt="" v-if="items[n+3*col-1]">
             <div class="control-panel" >
               <i class="iconfont icon-eye"></i>
             </div>
@@ -137,7 +137,7 @@
         let res = await this.$http.get('/rest/photo')
 
         this.items = res.data.filter(obj=>{
-          return obj.class.name === '壮美风光'
+          return obj.class.name === this.gclass
         })
         this.num = res.data.length
         this.col = parseInt(res.data.length/4)

@@ -10,7 +10,7 @@
       </el-table-column>
       <el-table-column prop="intro" label="简介" width="120">
       </el-table-column>
-      <el-table-column prop="photographer.name" label="摄影师" width="120">
+      <el-table-column prop="user.name" label="用户" width="120">
       </el-table-column>
       <el-table-column prop="price" label="价格" width="120">
       </el-table-column>

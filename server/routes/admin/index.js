@@ -61,7 +61,7 @@ module.exports = app => {
     // }
 
     if(req.Model.modelName === 'Photo'){
-      items = await req.Model.find().populate('photographer').populate('class').limit(100)
+      items = await req.Model.find().populate('User').populate('class').limit(100)
     }else if (req.Model.modelName === 'Blog') {
       // queryOptions.populate = 'class'
       items = await req.Model.find().populate('author').populate('tag').populate('class').limit(100)

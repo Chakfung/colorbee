@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a2b8bfcb-cec0-4de4-9293-516354cabc15" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/router/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,11 +44,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/vue.config.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="125">
               <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/src/router/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="350">
+              <caret line="246" column="2" lean-forward="true" selection-start-line="246" selection-start-column="2" selection-end-line="246" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -162,8 +170,8 @@
         <option value="$PROJECT_DIR$/server/index.js" />
         <option value="$PROJECT_DIR$/server/routes/admin/index.js" />
         <option value="$PROJECT_DIR$/server/routes/web/index.js" />
-        <option value="$PROJECT_DIR$/web/src/router/index.js" />
         <option value="$PROJECT_DIR$/web/vue.config.js" />
+        <option value="$PROJECT_DIR$/web/src/router/index.js" />
       </list>
     </option>
   </component>
@@ -190,7 +198,20 @@
             <path>
               <item name="CK-Blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="CK-Blog" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CK-Blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CK-Blog" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CK-Blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CK-Blog" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="router" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -358,10 +379,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="612541000" />
+    <option name="totallyTimeSpent" value="613537000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="116" y="57" width="1706" height="1045" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1506683" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -706,17 +728,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/router/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="241" column="2" selection-start-line="241" selection-start-column="5" selection-end-line="241" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/vue.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/router/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="246" column="2" lean-forward="true" selection-start-line="246" selection-start-column="2" selection-end-line="246" selection-end-column="2" />
         </state>
       </provider>
     </entry>

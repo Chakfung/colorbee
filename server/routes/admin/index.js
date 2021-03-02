@@ -61,7 +61,7 @@ module.exports = app => {
     // }
 
     if(req.Model.modelName === 'Photo'){
-      items = await req.Model.find().populate('User').populate('class').limit(100)
+      items = await req.Model.find().populate('user').populate('class').limit(100)
     }else if (req.Model.modelName === 'Blog') {
       // queryOptions.populate = 'class'
       items = await req.Model.find().populate('author').populate('tag').populate('class').limit(100)
@@ -133,8 +133,8 @@ module.exports = app => {
 
   app.post('/admin/api/upload', authMiddleware(), upload.single('file'), async (req, res) => {
     const file = req.file;
-    // file.url = `http://localhost:3000/uploads/${file.filename}`
-    file.url = `http://www.chakfung-ng.com/uploads/${file.filename}`
+    file.url = `http://localhost:3000/uploads/${file.filename}`
+    // file.url = `http://www.chakfung-ng.com/uploads/${file.filename}`
     res.send(file)
   })
 

@@ -63,6 +63,13 @@
               <i class="iconfont icon-eye"></i>
             </div>
           </div>
+
+          <div class="loading-image waterfall__img-wrapper" track-by="imageId" style=" margin-bottom: 4px;" v-for="n in remain" @click="photodetail(items[4*col-1+n])" v-if="remain">
+            <img :src="items[4*col-1+n].img" alt="">
+            <div class="control-panel" >
+              <i class="iconfont icon-eye"></i>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -104,6 +111,7 @@
         items:[],
         num:{},
         col:{},
+        remain:{},
         pop:{},
         buyphoto:{},
         user:{},
@@ -139,8 +147,9 @@
         this.items = res.data.filter(obj=>{
           return obj.class.name === this.gclass
         })
-        this.num = res.data.length
-        this.col = parseInt(res.data.length/4)
+        this.num = this.items.length
+        this.col = parseInt(this.items.length/4)
+        this.remain =this.items.length%4
 
 
 

@@ -36,6 +36,13 @@
           <i class="iconfont icon-eye"></i>
         </div>
       </div>
+
+      <div class="loading-image waterfall__img-wrapper" track-by="imageId" style=" margin-bottom: 4px;" v-for="n in remain" @click="photodetail(items[4*col-1+n])" v-if="remain">
+        <img :src="items[4*col-1+n].img" alt="">
+        <div class="control-panel" >
+          <i class="iconfont icon-eye"></i>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -47,7 +54,9 @@
       return {
         items:[],
         user:{},
-        col:{}
+        col:{},
+        remain:{},
+        num:{}
       }
     },
     methods:{
@@ -61,9 +70,9 @@
           return obj.hasOwnProperty('user') && obj.user._id === this.user
         })
 
-        this.col = Math.ceil(this.items.length/4)
-
-
+        this.col = parseInt(this.items.length/4)
+        this.remain =this.items.length%4
+        this.num = this.items.length
 
       },
 

@@ -3,52 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a2b8bfcb-cec0-4de4-9293-516354cabc15" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/components/PhotoAdd.vue" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/components/PhotoAdd.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/components/PhotoList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/components/PhotoList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/admin/css/app.022cecda.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/admin/css/chunk-vendors.84bb20f7.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/admin/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/admin/fonts/element-icons.535877f5.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/admin/fonts/element-icons.732389de.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/admin/fonts/icofont.50a4ab76.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/admin/fonts/icofont.f6ab04ae.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/admin/img/logo.cd0ceb14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/admin/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/admin/js/app.0a441a1f.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/admin/js/app.0a441a1f.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/admin/js/chunk-vendors.9009c66d.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/admin/js/chunk-vendors.9009c66d.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/admin/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/admin/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/web/css/app.e17a3fb6.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/web/css/chunk-vendors.2ec996b2.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/web/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/web/fonts/boxicons.15fa2fe8.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/web/fonts/boxicons.2722ed7e.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/web/fonts/boxicons.42d2adbb.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/web/fonts/boxicons.b8fb7c66.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/web/fonts/element-icons.535877f5.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/web/fonts/element-icons.732389de.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/web/fonts/icofont.50a4ab76.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/web/fonts/icofont.f6ab04ae.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/web/img/blogbg.ecb657c8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/web/img/boxicons.c1f1800d.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/web/img/iconfont.5039af4c.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/web/img/loginbg.08c4b75b.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/web/img/logo.cd0ceb14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/web/img/slide1.f4dcc1c5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/web/img/slide2.5219e200.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/web/img/slide3.296b4fa5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/web/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/web/js/about.bacc54dc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/web/js/about.bacc54dc.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/web/js/app.ef7b4153.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/web/js/app.ef7b4153.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/web/js/chunk-vendors.8327ca75.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/web/js/chunk-vendors.8327ca75.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/web/logo.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/gallery/ClassGallery.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/gallery/ClassGallery.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/gallery/PopPanel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/gallery/PopPanel.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/home/PhotoSection.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/home/PhotoSection.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -116,11 +70,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/vue.config.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="125">
-              <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+              <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin/vue.config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="125">
+              <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -132,11 +95,6 @@
               <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/src/components/1.js">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -240,7 +198,6 @@
         <option value="$PROJECT_DIR$/web/src/components/home/ServiceSection.vue" />
         <option value="$PROJECT_DIR$/web/src/components/home/ThemeSection.vue" />
         <option value="$PROJECT_DIR$/admin/vue-config.js" />
-        <option value="$PROJECT_DIR$/admin/vue.config.js" />
         <option value="$PROJECT_DIR$/admin/src/router/index.js" />
         <option value="$PROJECT_DIR$/server/admin/index.html" />
         <option value="$PROJECT_DIR$/admin/public/index.html" />
@@ -259,12 +216,13 @@
         <option value="$PROJECT_DIR$/web/src/components/gallery/ClassGallery.vue" />
         <option value="$PROJECT_DIR$/admin/src/components/PhotoAdd.vue" />
         <option value="$PROJECT_DIR$/admin/src/components/PhotoList.vue" />
+        <option value="$PROJECT_DIR$/admin/vue.config.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="41" />
-    <option name="y" value="364" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="63" />
+    <option name="y" value="-13" />
     <option name="width" value="1706" />
     <option name="height" value="1045" />
   </component>
@@ -310,7 +268,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/admin" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -322,18 +280,18 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2019.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\CK-Blog\web" />
-      <recent name="F:\CK-Blog\server" />
-      <recent name="F:\CK-Blog\server\admin" />
-      <recent name="F:\CK-Blog\admin\public" />
-      <recent name="F:\CK-Blog\web\src\assets\css" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\CK-Blog\admin\src\assets\image" />
       <recent name="F:\CK-Blog\web\src\components\home" />
       <recent name="F:\CK-Blog\web\src" />
       <recent name="F:\CK-Blog\admin\src\components" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\CK-Blog\admin" />
+      <recent name="F:\CK-Blog\web" />
+      <recent name="F:\CK-Blog\server" />
+      <recent name="F:\CK-Blog\server\admin" />
+      <recent name="F:\CK-Blog\admin\public" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -461,17 +419,18 @@
       <workItem from="1614658747392" duration="776000" />
       <workItem from="1614678047784" duration="2975000" />
       <workItem from="1614688544461" duration="95000" />
-      <workItem from="1614688854357" duration="4857000" />
+      <workItem from="1614688854357" duration="6185000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="625809000" />
+    <option name="totallyTimeSpent" value="627137000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="41" y="364" width="1706" height="1045" extended-state="1" />
+    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24483597" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21481876" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -488,7 +447,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.53787047" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.5093555" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -519,7 +478,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/admin/index.html" />
-    <entry file="file://$PROJECT_DIR$/admin/vue.config.js" />
     <entry file="file://$PROJECT_DIR$/web/src/http.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
@@ -793,7 +751,14 @@
     <entry file="file://$PROJECT_DIR$/web/vue.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
-          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/vue.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
         </state>
       </provider>
     </entry>

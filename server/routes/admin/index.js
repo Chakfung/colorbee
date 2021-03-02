@@ -113,7 +113,7 @@ module.exports = app => {
 
 
     //校验密码
-    const isValid = require('bcrypt').compareSync(password, user.password)
+    const isValid = require('bcryptjs').compareSync(password, user.password)
     // if (!isValid) {
     //   return res.status(422).send({
     //     message: '密码错误'

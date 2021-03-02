@@ -2,7 +2,7 @@
   <div class="login-container">
     <div class="bg">
       <div class="stars"></div>
-      <el-card header="-彩蜂摄影综合平台-管理员端-" class="login-card">
+      <el-card header="-请登陆-" class="login-card">
 
         <el-form @submit.native.prevent="login">
           <el-form-item label="用户名">
@@ -91,13 +91,6 @@
     background: linear-gradient(45deg, rgba(109, 210, 255, 0.68), rgba(255, 220, 194, 0.81));
     color: rgb(255, 255, 255);
     font-size: 20px;
-
-    &::after {
-      width: 100px;
-      height: 100px;
-      border: 1px solid red;
-      display: block;
-    }
   }
 
 

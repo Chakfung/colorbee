@@ -786,13 +786,11 @@ section {
     flex:1;
   margin-bottom: 20px;
   text-align: center;
-
 }
 
 .services .icon {
   display: flex;
   justify-content: center;
-    border: 1px red solid;
 }
 
 .services .icon i {

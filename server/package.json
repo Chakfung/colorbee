@@ -20,6 +20,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.5",
     "multer": "^1.4.2",
+    "nodejs-websocket": "^1.7.2",
     "require-all": "^3.0.0"
   }
 }

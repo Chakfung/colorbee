@@ -1,20 +1,20 @@
 <template>
   <div class="">
-    <h1>{{id? '编辑摄影师':'新增摄影师'}}</h1>
+    <div class="head">{{id? '编辑摄影师':'新增摄影师'}}</div>
     <el-form lable-width="120px" @submit.native.prevent="save">
-      <el-form-item label="名称">
-        <el-input v-model="model.name"></el-input>
+      <el-form-item label="名称" label-width="60px">
+        <el-input v-model="model.name" style="width:240px"></el-input>
       </el-form-item>
 
-      <el-form-item label="电话">
-      <el-input v-model="model.tel"></el-input>
+      <el-form-item label="电话" label-width="60px">
+      <el-input v-model="model.tel" style="width:240px"></el-input>
     </el-form-item>
 
-      <el-form-item label="微信">
-        <el-input v-model="model.wechat"></el-input>
+      <el-form-item label="微信" label-width="60px">
+        <el-input v-model="model.wechat" style="width:240px"></el-input>
       </el-form-item>
 
-      <el-form-item label="头像">
+      <el-form-item label="头像" label-width="60px">
         <el-upload
             class="avatar-uploader"
             :action="$http.defaults.baseURL +'/upload'"
@@ -27,14 +27,14 @@
         </el-upload>
       </el-form-item>
 
-      <el-form-item label="用户名">
-        <el-input v-model="model.username"></el-input>
+      <el-form-item label="用户名" label-width="60px">
+        <el-input v-model="model.username" style="width:240px"></el-input>
       </el-form-item>
-      <el-form-item label="密码">
-        <el-input v-model="model.password"></el-input>
+      <el-form-item label="密码" label-width="60px">
+        <el-input v-model="model.password" style="width:240px"></el-input>
       </el-form-item>
-      <el-form-item label="类型">
-        <el-input v-model="model.type"></el-input>
+      <el-form-item label="类型" label-width="60px">
+        <el-input v-model="model.type" style="width:240px"></el-input>
       </el-form-item>
       <el-form-item>
         <el-button type="primary" native-type="submit">保存</el-button>
@@ -86,6 +86,17 @@
 </script>
 
 <style scoped>
+  .head {
+    border-left: 5px solid #09b4c5;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    background: #f2f2f2;
+    font-family: "microsoft yahei";
+    font-weight: 600;
+    color: #919191;
+    margin-bottom: 15px;
+  }
   .ell{
     border: 1px dashed #d9d9d9;
     border-radius: 6px;

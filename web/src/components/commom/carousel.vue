@@ -21,7 +21,7 @@
       </button>
     </div>
     <div class="search-bar">
-      <input type="text" placeholder="搜索关键字">
+      <input type="text" placeholder="搜索关键字" v-model="searchVol">
 
       <a href="" style="text-decoration: none">
         <div class="search">
@@ -86,6 +86,7 @@
     },
     data() {
       return {
+        searchVol:'',
         imgIndex: 0,
         durationTime: 0.2,
         dotsIndex: 0,
@@ -94,6 +95,11 @@
     },
     components: {
       'CarouselItem': CarouselItem
+    },
+    watch : {
+      searchVol(val) {
+        this.sendVol(val)
+      }
     },
     computed: {
       allCount() {
@@ -108,6 +114,9 @@
       },
     },
     methods: {
+      sendVol(val) {
+        this.$emit('recVol',val)
+      },
       toLeft() {
         if (this.loop) {
           this.imgIndex--;
@@ -223,11 +232,13 @@
     }
     .search {
       width: 50px;
-
       color: rgb(114, 114, 114);
       height: 50px;
       margin-left: 40px;
       padding-top: 3px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
     }
 

@@ -16,7 +16,7 @@
       </el-form-item>
 
       <el-form-item label="标题" label-width="40px">
-        <el-input v-model="model.title"></el-input>
+        <el-input v-model="model.name"></el-input>
       </el-form-item>
 
       <el-form-item label="简介" label-width="40px">
@@ -96,6 +96,7 @@
     },
     created() {
       this.fetchParents()
+      this.model.user = localStorage.user
     }
 
   }
@@ -104,12 +105,11 @@
 <style scoped lang="scss">
   .release {
     padding: 15px;
-    border: 1px #d9d9d9 solid;
     .panel-title {
       width: 100%;
       border-bottom: 1px #d9d9d9 solid;
       margin-bottom: 10px;
-      color:#ff5f5f;
+      color:#259;
       font-size: 18px;
       font-family: 'PingFangSC','helvetica neue','hiragino sans gb','arial','microsoft yahei ui','microsoft yahei','simsun','sans-serif'!important;
       font-weight: bold;

@@ -1,12 +1,7 @@
 <template>
   <div class="">
-    <h1>{{id? '编辑博客':'新增博客'}}</h1>
+    <div class="head">{{id? '编辑博客':'新增博客'}}</div>
     <el-form lable-width="120px" @submit.native.prevent="save">
-<!--      <el-form-item label="上级分类">-->
-<!--        <el-select v-model="model.parent">-->
-<!--          <el-option v-for="item in parents" :key="item._id" :label="item.class"></el-option>-->
-<!--        </el-select>-->
-<!--      </el-form-item>-->
       <el-form-item label="分类" >
 
         <el-select v-model="model.class" style="margin-left: 12px">
@@ -166,6 +161,17 @@
 </script>
 
 <style scoped>
+  .head {
+    border-left: 5px solid #09b4c5;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    background: #f2f2f2;
+    font-family: "microsoft yahei";
+    font-weight: 600;
+    color: #919191;
+    margin-bottom: 15px;
+  }
   .ell{
     border: 1px dashed #d9d9d9;
     border-radius: 6px;

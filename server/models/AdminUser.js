@@ -5,9 +5,8 @@ const scheme = new mongoose.Schema({
   password:{type:String,
     select:false,
     set(val){
-      return require('bcrypt').hashSync(val,10)
+      return require('bcryptjs').hashSync(val,10)
     }},
-
 })
 
 module.exports = mongoose.model('AdminUser',scheme)

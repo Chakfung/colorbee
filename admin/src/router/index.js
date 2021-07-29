@@ -18,7 +18,8 @@ import ThemetList from '../components/ThemeList.vue'
 import ThemeAdd from '../components/ThemeAdd.vue'
 import PhotographerList from '../components/PhotographerList.vue'
 import PhotographerAdd from '../components/PhotographerAdd.vue'
-
+import OrderList from '../components/OrderList'
+import DataStatistics from '../components/DataStatistics'
 Vue.use(VueRouter)
 
 const routes = [
@@ -36,6 +37,15 @@ const routes = [
 
     children:[
 
+      {
+        path: '/',
+        redirect: 'datastatistics'
+      },
+      {
+        path: 'datastatistics',
+        name: 'datastatistics',
+        component: DataStatistics,
+      },
         //分类
       {
         path: '/category/list',
@@ -152,6 +162,11 @@ const routes = [
         path: '/theme/edit/:id',
         component: ThemeAdd,
         props: true
+      },
+      // 订单
+      {
+        path: '/order/list',
+        component: OrderList
       },
     ]
   }

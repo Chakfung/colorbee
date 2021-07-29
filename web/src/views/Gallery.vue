@@ -70,16 +70,16 @@
           <div class="more" @click="classGallery('壮美风光')">更多</div>
 
 <!--          一张图-->
-          <div class="collection__item" >
-            <a data-v-04c07ed2=""  class="" @click="picClick(item)">
+          <div class="collection__item" v-for="item in photo.scenery.slice(0,6)">
+            <a data-v-04c07ed2=""  class="" @click="photodetail(item)">
               <div data-v-04c07ed2="" class="loading-image collection__image">
                 <div class="image loading2" data-src="//weiliicimg6.pstatp.com/weili/sm/1068392837436801163.webp"
                      lazy="loaded"
-                     style="background-image: url(&quot;//weiliicimg6.pstatp.com/weili/sm/1068392837436801163.webp&quot;);"></div>
+                     :style="{backgroundImage:'url(' + item.img + ')'}"></div>
               </div>
               <div data-v-04c07ed2="" class="collection__info">
               <span data-v-04c07ed2="" class="collection__name">
-              最热新年插画
+              {{item.name}}
               </span>
               </div>
             </a>
@@ -88,229 +88,127 @@
           </div>
 
 <!--          一张图-->
-          <div class="collection__item">
-            <a data-v-04c07ed2="" href=""  class="">
-              <div data-v-04c07ed2="" class="loading-image collection__image">
-                <div class="image loading4" data-src="//icweiliimg1.pstatp.com/weili/sm/903376869610487821.webp"
-                     lazy="loaded"
-                     style="background-image: url(&quot;//icweiliimg1.pstatp.com/weili/sm/903376869610487821.webp&quot;);"></div>
-              </div>
-              <div data-v-04c07ed2="" class="collection__info">
-              <span data-v-04c07ed2="" class="collection__name">
-               新年创意图TOP
-              </span>
-              </div>
-            </a>
 
-          </div>
 
-          <a data-v-04c07ed2="" href="/topic?topicId=49935" class="collection__item">
-            <div data-v-04c07ed2="" class="loading-image collection__image">
-              <div class="image loading3" data-src="//weiliicimg9.pstatp.com/weili/sm/1068392837432344882.webp"
-                   lazy="loaded"
-                   style="background-image: url(&quot;//weiliicimg9.pstatp.com/weili/sm/1068392837432344882.webp&quot;);"></div>
-            </div>
-            <div data-v-04c07ed2="" class="collection__info">
-              <span data-v-04c07ed2="" class="collection__name">
-              牛年大吉
-              </span>
-            </div>
-          </a>
+<!--          <div class="collection__item">-->
+<!--            <a data-v-04c07ed2="" href=""  class="">-->
+<!--              <div data-v-04c07ed2="" class="loading-image collection__image">-->
+<!--                <div class="image loading4" data-src="//icweiliimg1.pstatp.com/weili/sm/903376869610487821.webp"-->
+<!--                     lazy="loaded"-->
+<!--                     style="background-image: url(&quot;//icweiliimg1.pstatp.com/weili/sm/903376869610487821.webp&quot;);"></div>-->
+<!--              </div>-->
+<!--              <div data-v-04c07ed2="" class="collection__info">-->
+<!--              <span data-v-04c07ed2="" class="collection__name">-->
+<!--               新年创意图TOP-->
+<!--              </span>-->
+<!--              </div>-->
+<!--            </a>-->
 
-          <a data-v-04c07ed2="" href="/topic?topicId=49502" class="collection__item"><div data-v-04c07ed2="" class="loading-image collection__image"><div class="image loading4" data-src="//icweiliimg6.pstatp.com/weili/sm/1047391289172164690.webp" lazy="loaded" style="background-image: url(&quot;//icweiliimg6.pstatp.com/weili/sm/1047391289172164690.webp&quot;);"></div></div><div data-v-04c07ed2="" class="collection__info"><span data-v-04c07ed2="" class="collection__name">
-        春节海报背景
-      </span></div></a>
+<!--          </div>-->
 
-          <a data-v-04c07ed2="" href="/topic?topicId=50025" class="collection__item"><div data-v-04c07ed2="" class="loading-image collection__image"><div class="image loading3" data-src="//weiliicimg1.pstatp.com/weili/sm/1095006061086113800.webp" lazy="loaded" style="background-image: url(&quot;//weiliicimg1.pstatp.com/weili/sm/1095006061086113800.webp&quot;);"></div></div><div data-v-04c07ed2="" class="collection__info"><span data-v-04c07ed2="" class="collection__name">
-        年货节
-      </span></div></a>
+<!--          <a data-v-04c07ed2="" href="/topic?topicId=49935" class="collection__item">-->
+<!--            <div data-v-04c07ed2="" class="loading-image collection__image">-->
+<!--              <div class="image loading3" data-src="//weiliicimg9.pstatp.com/weili/sm/1068392837432344882.webp"-->
+<!--                   lazy="loaded"-->
+<!--                   style="background-image: url(&quot;//weiliicimg9.pstatp.com/weili/sm/1068392837432344882.webp&quot;);"></div>-->
+<!--            </div>-->
+<!--            <div data-v-04c07ed2="" class="collection__info">-->
+<!--              <span data-v-04c07ed2="" class="collection__name">-->
+<!--              牛年大吉-->
+<!--              </span>-->
+<!--            </div>-->
+<!--          </a>-->
 
-          <a data-v-04c07ed2="" href="/topic?topicId=50029" class="collection__item"><div data-v-04c07ed2="" class="loading-image collection__image"><div class="image loading2" data-src="//weiliicimg1.pstatp.com/weili/sm/708084337260101647.webp" lazy="loaded" style="background-image: url(&quot;//weiliicimg1.pstatp.com/weili/sm/708084337260101647.webp&quot;);"></div></div><div data-v-04c07ed2="" class="collection__info"><span data-v-04c07ed2="" class="collection__name">
-        春运
-      </span></div></a>
+<!--          <a data-v-04c07ed2="" href="/topic?topicId=49502" class="collection__item"><div data-v-04c07ed2="" class="loading-image collection__image"><div class="image loading4" data-src="//icweiliimg6.pstatp.com/weili/sm/1047391289172164690.webp" lazy="loaded" style="background-image: url(&quot;//icweiliimg6.pstatp.com/weili/sm/1047391289172164690.webp&quot;);"></div></div><div data-v-04c07ed2="" class="collection__info"><span data-v-04c07ed2="" class="collection__name">-->
+<!--        春节海报背景-->
+<!--      </span></div></a>-->
+
+<!--          <a data-v-04c07ed2="" href="/topic?topicId=50025" class="collection__item"><div data-v-04c07ed2="" class="loading-image collection__image"><div class="image loading3" data-src="//weiliicimg1.pstatp.com/weili/sm/1095006061086113800.webp" lazy="loaded" style="background-image: url(&quot;//weiliicimg1.pstatp.com/weili/sm/1095006061086113800.webp&quot;);"></div></div><div data-v-04c07ed2="" class="collection__info"><span data-v-04c07ed2="" class="collection__name">-->
+<!--        年货节-->
+<!--      </span></div></a>-->
+
+<!--          <a data-v-04c07ed2="" href="/topic?topicId=50029" class="collection__item"><div data-v-04c07ed2="" class="loading-image collection__image"><div class="image loading2" data-src="//weiliicimg1.pstatp.com/weili/sm/708084337260101647.webp" lazy="loaded" style="background-image: url(&quot;//weiliicimg1.pstatp.com/weili/sm/708084337260101647.webp&quot;);"></div></div><div data-v-04c07ed2="" class="collection__info"><span data-v-04c07ed2="" class="collection__name">-->
+<!--        春运-->
+<!--      </span></div></a>-->
+
         </div>
 <!--        壮美风光块-->
 
         <div class="collection">
-          <div class="collection-title" >人物肖像 </div>
+          <div class="collection-title" >人物肖像  </div>
           <div class="more" @click="classGallery('人物肖像')">更多</div>
 
           <!--          一张图-->
-          <a data-v-04c07ed2="" href="/topic?topicId=50049" class="collection__item">
-            <div data-v-04c07ed2="" class="loading-image collection__image">
-              <div class="image loading2" data-src="//weiliicimg6.pstatp.com/weili/sm/1068392837436801163.webp"
-                   lazy="loaded"
-                   style="background-image: url(&quot;//weiliicimg6.pstatp.com/weili/sm/1068392837436801163.webp&quot;);"></div>
-            </div>
-            <div data-v-04c07ed2="" class="collection__info">
+          <div class="collection__item" v-for="item in photo.portrait.slice(0,6)">
+            <a data-v-04c07ed2=""  class="" @click="photodetail(item)">
+              <div data-v-04c07ed2="" class="loading-image collection__image">
+                <div class="image loading2" data-src="//weiliicimg6.pstatp.com/weili/sm/1068392837436801163.webp"
+                     lazy="loaded"
+                     :style="{backgroundImage:'url(' + item.img + ')'}"></div>
+              </div>
+              <div data-v-04c07ed2="" class="collection__info">
               <span data-v-04c07ed2="" class="collection__name">
-              最热新年插画
+              {{item.name}}
               </span>
-            </div>
-          </a>
-          <!--          一张图-->
+              </div>
+            </a>
 
-          <a data-v-04c07ed2="" href="/topic?topicId=50048" class="collection__item">
-            <div data-v-04c07ed2="" class="loading-image collection__image">
-              <div class="image loading4" data-src="//icweiliimg1.pstatp.com/weili/sm/903376869610487821.webp"
-                   lazy="loaded"
-                   style="background-image: url(&quot;//icweiliimg1.pstatp.com/weili/sm/903376869610487821.webp&quot;);"></div>
-            </div>
-            <div data-v-04c07ed2="" class="collection__info">
-              <span data-v-04c07ed2="" class="collection__name">
-               新年创意图TOP
-              </span>
-            </div>
-          </a>
 
-          <a data-v-04c07ed2="" href="/topic?topicId=49935" class="collection__item">
-            <div data-v-04c07ed2="" class="loading-image collection__image">
-              <div class="image loading3" data-src="//weiliicimg9.pstatp.com/weili/sm/1068392837432344882.webp"
-                   lazy="loaded"
-                   style="background-image: url(&quot;//weiliicimg9.pstatp.com/weili/sm/1068392837432344882.webp&quot;);"></div>
-            </div>
-            <div data-v-04c07ed2="" class="collection__info">
-              <span data-v-04c07ed2="" class="collection__name">
-              牛年大吉
-              </span>
-            </div>
-          </a>
-
-          <a data-v-04c07ed2="" href="/topic?topicId=49502" class="collection__item"><div data-v-04c07ed2="" class="loading-image collection__image"><div class="image loading4" data-src="//icweiliimg6.pstatp.com/weili/sm/1047391289172164690.webp" lazy="loaded" style="background-image: url(&quot;//icweiliimg6.pstatp.com/weili/sm/1047391289172164690.webp&quot;);"></div></div><div data-v-04c07ed2="" class="collection__info"><span data-v-04c07ed2="" class="collection__name">
-        春节海报背景
-      </span></div></a>
-
-          <a data-v-04c07ed2="" href="/topic?topicId=50025" class="collection__item"><div data-v-04c07ed2="" class="loading-image collection__image"><div class="image loading3" data-src="//weiliicimg1.pstatp.com/weili/sm/1095006061086113800.webp" lazy="loaded" style="background-image: url(&quot;//weiliicimg1.pstatp.com/weili/sm/1095006061086113800.webp&quot;);"></div></div><div data-v-04c07ed2="" class="collection__info"><span data-v-04c07ed2="" class="collection__name">
-        年货节
-      </span></div></a>
-
-          <a data-v-04c07ed2="" href="/topic?topicId=50029" class="collection__item"><div data-v-04c07ed2="" class="loading-image collection__image"><div class="image loading2" data-src="//weiliicimg1.pstatp.com/weili/sm/708084337260101647.webp" lazy="loaded" style="background-image: url(&quot;//weiliicimg1.pstatp.com/weili/sm/708084337260101647.webp&quot;);"></div></div><div data-v-04c07ed2="" class="collection__info"><span data-v-04c07ed2="" class="collection__name">
-        春运
-      </span></div></a>
+          </div>
         </div>
 
+
+
         <div class="collection">
-          <div class="collection-title" >艺术创作</div>
+          <div class="collection-title" >艺术创作  </div>
           <div class="more" @click="classGallery('艺术创作')">更多</div>
 
-          <!--          一张图-->
-          <a data-v-04c07ed2="" href="/topic?topicId=50049" class="collection__item">
-            <div data-v-04c07ed2="" class="loading-image collection__image">
-              <div class="image loading2" data-src="//weiliicimg6.pstatp.com/weili/sm/1068392837436801163.webp"
-                   lazy="loaded"
-                   style="background-image: url(&quot;//weiliicimg6.pstatp.com/weili/sm/1068392837436801163.webp&quot;);"></div>
-            </div>
-            <div data-v-04c07ed2="" class="collection__info">
+          <div class="collection__item" v-for="item in photo.art.slice(0,6)">
+            <a data-v-04c07ed2=""  class="" @click="photodetail(item)">
+              <div data-v-04c07ed2="" class="loading-image collection__image">
+                <div class="image loading2" data-src="//weiliicimg6.pstatp.com/weili/sm/1068392837436801163.webp"
+                     lazy="loaded"
+                     :style="{backgroundImage:'url(' + item.img + ')'}"></div>
+              </div>
+              <div data-v-04c07ed2="" class="collection__info">
               <span data-v-04c07ed2="" class="collection__name">
-              最热新年插画
+              {{item.name}}
               </span>
-            </div>
-          </a>
-          <!--          一张图-->
+              </div>
+            </a>
+          </div>
 
-          <a data-v-04c07ed2="" href="/topic?topicId=50048" class="collection__item">
-            <div data-v-04c07ed2="" class="loading-image collection__image">
-              <div class="image loading4" data-src="//icweiliimg1.pstatp.com/weili/sm/903376869610487821.webp"
-                   lazy="loaded"
-                   style="background-image: url(&quot;//icweiliimg1.pstatp.com/weili/sm/903376869610487821.webp&quot;);"></div>
-            </div>
-            <div data-v-04c07ed2="" class="collection__info">
-              <span data-v-04c07ed2="" class="collection__name">
-               新年创意图TOP
-              </span>
-            </div>
-          </a>
-
-          <a data-v-04c07ed2="" href="/topic?topicId=49935" class="collection__item">
-            <div data-v-04c07ed2="" class="loading-image collection__image">
-              <div class="image loading3" data-src="//weiliicimg9.pstatp.com/weili/sm/1068392837432344882.webp"
-                   lazy="loaded"
-                   style="background-image: url(&quot;//weiliicimg9.pstatp.com/weili/sm/1068392837432344882.webp&quot;);"></div>
-            </div>
-            <div data-v-04c07ed2="" class="collection__info">
-              <span data-v-04c07ed2="" class="collection__name">
-              牛年大吉
-              </span>
-            </div>
-          </a>
-
-          <a data-v-04c07ed2="" href="/topic?topicId=49502" class="collection__item"><div data-v-04c07ed2="" class="loading-image collection__image"><div class="image loading4" data-src="//icweiliimg6.pstatp.com/weili/sm/1047391289172164690.webp" lazy="loaded" style="background-image: url(&quot;//icweiliimg6.pstatp.com/weili/sm/1047391289172164690.webp&quot;);"></div></div><div data-v-04c07ed2="" class="collection__info"><span data-v-04c07ed2="" class="collection__name">
-        春节海报背景
-      </span></div></a>
-
-          <a data-v-04c07ed2="" href="/topic?topicId=50025" class="collection__item"><div data-v-04c07ed2="" class="loading-image collection__image"><div class="image loading3" data-src="//weiliicimg1.pstatp.com/weili/sm/1095006061086113800.webp" lazy="loaded" style="background-image: url(&quot;//weiliicimg1.pstatp.com/weili/sm/1095006061086113800.webp&quot;);"></div></div><div data-v-04c07ed2="" class="collection__info"><span data-v-04c07ed2="" class="collection__name">
-        年货节
-      </span></div></a>
-
-          <a data-v-04c07ed2="" href="/topic?topicId=50029" class="collection__item"><div data-v-04c07ed2="" class="loading-image collection__image"><div class="image loading2" data-src="//weiliicimg1.pstatp.com/weili/sm/708084337260101647.webp" lazy="loaded" style="background-image: url(&quot;//weiliicimg1.pstatp.com/weili/sm/708084337260101647.webp&quot;);"></div></div><div data-v-04c07ed2="" class="collection__info"><span data-v-04c07ed2="" class="collection__name">
-        春运
-      </span></div></a>
         </div>
 
         <div class="collection">
-          <div class="collection-title" >设计素材</div>
+          <div class="collection-title" >设计素材  </div>
           <div class="more" @click="classGallery('设计素材')">更多</div>
 
-          <!--          一张图-->
-          <a data-v-04c07ed2="" href="/topic?topicId=50049" class="collection__item">
-            <div data-v-04c07ed2="" class="loading-image collection__image">
-              <div class="image loading2" data-src="//weiliicimg6.pstatp.com/weili/sm/1068392837436801163.webp"
-                   lazy="loaded"
-                   style="background-image: url(&quot;//weiliicimg6.pstatp.com/weili/sm/1068392837436801163.webp&quot;);"></div>
-            </div>
-            <div data-v-04c07ed2="" class="collection__info">
+          <div class="collection__item" v-for="item in photo.design.slice(0,6)">
+            <a data-v-04c07ed2=""  class="" @click="photodetail(item)">
+              <div data-v-04c07ed2="" class="loading-image collection__image">
+                <div class="image loading2" data-src="//weiliicimg6.pstatp.com/weili/sm/1068392837436801163.webp"
+                     lazy="loaded"
+                     :style="{backgroundImage:'url(' + item.img + ')'}"></div>
+              </div>
+              <div data-v-04c07ed2="" class="collection__info">
               <span data-v-04c07ed2="" class="collection__name">
-              最热新年插画
+              {{item.name}}
               </span>
-            </div>
-          </a>
-          <!--          一张图-->
+              </div>
+            </a>
+          </div>
 
-          <a data-v-04c07ed2="" href="/topic?topicId=50048" class="collection__item">
-            <div data-v-04c07ed2="" class="loading-image collection__image">
-              <div class="image loading4" data-src="//icweiliimg1.pstatp.com/weili/sm/903376869610487821.webp"
-                   lazy="loaded"
-                   style="background-image: url(&quot;//icweiliimg1.pstatp.com/weili/sm/903376869610487821.webp&quot;);"></div>
-            </div>
-            <div data-v-04c07ed2="" class="collection__info">
-              <span data-v-04c07ed2="" class="collection__name">
-               新年创意图TOP
-              </span>
-            </div>
-          </a>
-
-          <a data-v-04c07ed2="" href="/topic?topicId=49935" class="collection__item">
-            <div data-v-04c07ed2="" class="loading-image collection__image">
-              <div class="image loading3" data-src="//weiliicimg9.pstatp.com/weili/sm/1068392837432344882.webp"
-                   lazy="loaded"
-                   style="background-image: url(&quot;//weiliicimg9.pstatp.com/weili/sm/1068392837432344882.webp&quot;);"></div>
-            </div>
-            <div data-v-04c07ed2="" class="collection__info">
-              <span data-v-04c07ed2="" class="collection__name">
-              牛年大吉
-              </span>
-            </div>
-          </a>
-
-          <a data-v-04c07ed2="" href="/topic?topicId=49502" class="collection__item"><div data-v-04c07ed2="" class="loading-image collection__image"><div class="image loading4" data-src="//icweiliimg6.pstatp.com/weili/sm/1047391289172164690.webp" lazy="loaded" style="background-image: url(&quot;//icweiliimg6.pstatp.com/weili/sm/1047391289172164690.webp&quot;);"></div></div><div data-v-04c07ed2="" class="collection__info"><span data-v-04c07ed2="" class="collection__name">
-        春节海报背景
-      </span></div></a>
-
-          <a data-v-04c07ed2="" href="/topic?topicId=50025" class="collection__item"><div data-v-04c07ed2="" class="loading-image collection__image"><div class="image loading3" data-src="//weiliicimg1.pstatp.com/weili/sm/1095006061086113800.webp" lazy="loaded" style="background-image: url(&quot;//weiliicimg1.pstatp.com/weili/sm/1095006061086113800.webp&quot;);"></div></div><div data-v-04c07ed2="" class="collection__info"><span data-v-04c07ed2="" class="collection__name">
-        年货节
-      </span></div></a>
-
-          <a data-v-04c07ed2="" href="/topic?topicId=50029" class="collection__item"><div data-v-04c07ed2="" class="loading-image collection__image"><div class="image loading2" data-src="//weiliicimg1.pstatp.com/weili/sm/708084337260101647.webp" lazy="loaded" style="background-image: url(&quot;//weiliicimg1.pstatp.com/weili/sm/708084337260101647.webp&quot;);"></div></div><div data-v-04c07ed2="" class="collection__info"><span data-v-04c07ed2="" class="collection__name">
-        春运
-      </span></div></a>
         </div>
+
+
 
       </div>
     </div>
 
-<!--    弹窗--> 
+<!--    弹窗-->
 
-    <pop-panel></pop-panel>
+    <pop-panel v-bind:pop=pop v-bind:user=user></pop-panel>
     <!--    黑幕-->
     <div id="fade" class="black_overlay" ></div>
 
@@ -402,6 +300,15 @@
     },
     data() {
       return {
+        photo:{
+          scenery:[],
+          portrait:[],
+          art:[],
+          design:[],
+
+        },
+        user:{},
+        pop:{},
         item:{
           name:'123',
           age:123
@@ -423,6 +330,36 @@
       classGallery(gclass){
         this.$router.push(`/classgallery/${gclass}`)
       },
+      async fetch(){
+        let res = await this.$http.get('/rest/photo')
+
+        this.photo.scenery = res.data.filter(obj=>{
+          return obj.class.name === '壮美风光'
+        })
+        this.photo.portrait = res.data.filter(obj=>{
+          return obj.class.name === '人物肖像'
+        })
+        this.photo.art = res.data.filter(obj=>{
+          return obj.class.name === '艺术创作'
+        })
+        this.photo.design = res.data.filter(obj=>{
+          return obj.class.name === '设计素材'
+        })
+
+
+
+      },
+
+      photodetail(pop){
+        if(!localStorage.user){
+          this.$router.push('/login')
+        }
+        this.pop = pop
+        // this.buyphoto.photo = pop._id
+        $('#light').css({"display":"block"});
+        $('#fade').css({"display":"block"});
+
+      },
       // picClick(){
       //   $('#light').css({"display":"block"});
       //   $('#fade').css({"display":"block"});
@@ -433,6 +370,12 @@
       //   $('#light').css({"display":"none"});
       //   $('#fade').css({"display":"none"});
       // }
+
+    },
+    created(){
+
+      this.fetch()
+      this.user = localStorage.user
 
     }
   }

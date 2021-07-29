@@ -2,6 +2,7 @@
 
   <div class="widget-courselist">
     <div class="panel-title">收藏博客</div>
+    <div class="nodata" v-if="items.length===0"><img src="../../assets/image/me/nodata.png" alt="">暂无数据</div>
     <ul class="pagelist-wrapper">
 
       <li class="impression-item impression-viewed" data-post-id="66420781" v-for="item in items" :key="item._id">
@@ -46,7 +47,6 @@
 
     </ul>
     <i class="icon-loading--yellow" style="display: none;"></i>
-    <div class="pagelist-load-more" style="display: block;">已经无数据了</div>
     <i class="icon-end" style="display: none;"></i>
   </div>
 </template>
@@ -93,14 +93,22 @@
 <style scoped lang="scss">
 
   .widget-courselist {
-
-    padding: 20px 50px 0 30px;
-    border: 1px #d9d9d9 solid;
+    font-family: Lato, "Helvetica Neue", Arial, Helvetica, sans-serif;
+    padding: 20px;
+    border-radius: 10px;
+    .nodata {
+      width: 100%;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
     .panel-title {
       width: 100%;
       border-bottom: 1px #d9d9d9 solid;
       margin-bottom: 10px;
-      color:#ff5f5f;
+      color: #259;
       font-size: 18px;
       font-family: 'PingFangSC','helvetica neue','hiragino sans gb','arial','microsoft yahei ui','microsoft yahei','simsun','sans-serif'!important;
       font-weight: bold;
@@ -111,10 +119,19 @@
       margin: 0;
 
       li {
-        padding: 32px 0 20px;
-        border-top: 1px solid #eaeaea;
+        margin-top: 20px;
+        padding: 20px;
+        box-shadow: 0 0 0 1px #d4d4d5, 0 2px 4px 0 rgba(34, 36, 38, 0.12),
+        0 2px 10px 0 rgba(34, 36, 38, 0.15);
+        border-radius: 5px;
         font-size: 0;
 
+        &:hover {
+          transform: translateY(-3px);
+          transition: all 0.1s ease;
+          box-shadow: 0 0 0 1px #d4d4d5, 0 2px 4px 0 rgba(34, 36, 38, 0.15),
+          0 2px 10px 0 rgba(34, 36, 38, 0.25);
+        }
         .item-cover {
           position: relative;
           display: inline-block;
@@ -226,15 +243,18 @@
 
           .item-handler {
             position: absolute;
-            top: -20px;
-            right: 0;
+            top: 3px;
+            right: 35px;
 
 
             span {
               color: #808388;
 
               .cancel {
-
+                position: absolute;
+                top: -10px;
+                right: -115px;
+                height: 35px;
                 border: none;
                 display: flex;
                 align-items: center;
@@ -244,12 +264,9 @@
                 border-radius: 5px;
                 margin-left: 65px;
                 margin-bottom: 5px;
-
                 .icon-star {
-
                   color: rgb(255, 255, 255);
                 }
-
                 &:hover {
                   background-color: #2d5e8a;
                 }

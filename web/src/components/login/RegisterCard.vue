@@ -17,7 +17,7 @@
           <div class="col-sm-12">
             <label for="username">用户名<abbr title="required" class="required">*</abbr></label>
             <p>
-              <input type="text" name="username" id="username" class="form-controller col-sm-10" placeholder="UserName" v-model="model.username" >
+              <input type="text" name="username" id="username" class="form-controller col-sm-10" placeholder="6-12位纯字母" v-model="model.username" >
               <span id="s_username" class="error col-sm-2"></span>
             </p>
           </div>
@@ -29,13 +29,10 @@
             </p>
           </div>
 
-
-
-
           <div class="col-sm-12">
             <label class="" for="password1">密码<abbr title="required" class="required">*</abbr></label>
             <p>
-              <input type="password" value="" placeholder="password" id="Password1" name="password1" class="form-controller col-sm-10" v-model="model.password">
+              <input type="password" value="" placeholder="6-8位数字" id="Password1" name="password1" class="form-controller col-sm-10" v-model="model.password">
               <span id="s_password1" class="error col-sm-2"></span>
             </p>
           </div>
@@ -71,7 +68,8 @@
             <label class="inline" for="rememberme">I agree <a href="#">Terms & Condition</a></label>
           </div>
           <div class="col-sm-12">
-            <input type="submit" id="submit" value="Register" name="signup" class="theme-button marL0" @click="register()">
+            <input  value="返回登陆" style="text-align: center;cursor: pointer" class="theme-button marL0" @click="goLogin()">
+            <input style="margin-left: 20px" type="submit" id="submit" value="注册" name="signup" class="theme-button marL0" @click="register()">
           </div>
         </div>
       </div>
@@ -91,7 +89,6 @@
     methods:{
       afterUpload(res){
         this.$set(this.model,'avatar',res.url)
-
       },
       async register(){
 
@@ -102,6 +99,9 @@
           message:'注册成功'
         })
         this.$router.push('/login')
+      },
+      goLogin(){
+        this.$router.push('/login')
       }
     },
 
@@ -109,6 +109,15 @@
 </script>
 
 <style scoped lang="scss">
+  .login-form {
+    border-radius: 5px;
+    input {
+      border-radius: 5px;
+    }
+    span {
+      color: red;
+    }
+  }
   .avatar-uploader {
     img {
       width: 178px;

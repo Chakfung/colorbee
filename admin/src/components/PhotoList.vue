@@ -1,14 +1,14 @@
 <template>
   <div class="">
-    <h1>图片列表</h1>
-    <el-table :data="items">
+    <div class="head">图片列表</div>
+    <el-table :data="showItems">
       <el-table-column prop="_id" label="ID" width="230">
       </el-table-column>
       <el-table-column prop="class.name" label="分类" width="140">
       </el-table-column>
-      <el-table-column prop="name" label="名称" width="120">
+      <el-table-column prop="name" label="名称" width="140">
       </el-table-column>
-      <el-table-column prop="intro" label="简介" width="120">
+      <el-table-column prop="intro" label="简介" width="320">
       </el-table-column>
       <el-table-column prop="user.name" label="用户" width="120">
       </el-table-column>
@@ -32,6 +32,19 @@
         </template>
       </el-table-column>
     </el-table>
+
+    <div class="block">
+      <el-pagination
+          layout="prev, pager, next"
+          :total="items.length"
+          :page-size="pageSize"
+          :current-page="pageIndex"
+          @current-change="changPage"
+          @prev-click="pre"
+          @next-click="next"
+      >
+      </el-pagination>
+    </div>
   </div>
 </template>
 
@@ -39,7 +52,11 @@
   export default {
     data() {
       return{
-        items:[]
+        items:[],
+        pageIndex: 1,
+        pageSize: 8,
+        showItems: [],
+
       }
     },
 
@@ -47,8 +64,8 @@
       async fetch(){
         const res = await this.$http.get('rest/photo')
         this.items = res.data
+        this.showItem()
       },
-
       async remove(row) {
         console.log(row);
         this.$confirm(`是否删除图片"${row.name}", 是否继续?`, '提示', {
@@ -56,7 +73,6 @@
           cancelButtonText: '取消',
           type: 'warning'
         }).then(async () => {
-
           const res = await this.$http.delete(`rest/photo/${row._id}`)
           this.$message({
             type: 'success',
@@ -64,18 +80,53 @@
           });
           this.fetch()
         })
+      },
+      changPage (index) {
+        this.pageIndex = index
+      },
+      pre(){
+        this.pageIndex--
+      },
+      next() {
+        this.pageIndex++
+      },
+      showItem () {
+        this.showItems = this.items.filter((item, inerindex) => {
+          return inerindex >= 0 + this.pageSize * (this.pageIndex - 1) && inerindex < this.pageIndex * this.pageSize
+        })
+      },
+
+    },
+    watch: {
+      pageIndex () {
+        this.showItem()
       }
     },
     created(){
       this.fetch()
-
     },
-
+    mounted () {
+    }
   };
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+  .head {
+    border-left: 5px solid #09b4c5;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    background: #f2f2f2;
+    font-family: "microsoft yahei";
+    font-weight: 600;
+    color: #919191;
+  }
+  .block {
+    position: absolute;
+    bottom: 40px;
+    left: 50% ;
+    transform: translate(-50%, 0);
+  }
 </style>
 
 

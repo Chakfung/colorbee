@@ -65,6 +65,30 @@ module.exports = app => {
     }else if (req.Model.modelName === 'Blog') {
       // queryOptions.populate = 'class'
       items = await req.Model.find().populate('author').populate('tag').populate('class').limit(100)
+    }else if (req.Model.modelName === 'AppointOrder') {
+      items = await req.Model.find().populate('customer')
+          .populate({
+            path: 'theme',
+            populate: {
+              path: 'photographer',
+            },
+          })
+          .populate({
+            path: 'theme',
+            populate: {
+              path: 'parent',
+            },
+
+
+          }).populate({
+            path: 'theme',
+            populate: {
+              path: 'tag',
+            },
+
+
+          })
+          .limit(100)
     }else{
 
       if (req.Model.modelName === 'Category') {
@@ -133,8 +157,8 @@ module.exports = app => {
 
   app.post('/admin/api/upload', authMiddleware(), upload.single('file'), async (req, res) => {
     const file = req.file;
-    file.url = `http://localhost:3000/uploads/${file.filename}`
-    // file.url = `http://www.chakfung-ng.com/uploads/${file.filename}`
+    // file.url = `http://localhost:3000/uploads/${file.filename}`
+    file.url = `http://www.chakfung-ng.com/uploads/${file.filename}`
     res.send(file)
   })
 

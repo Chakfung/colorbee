@@ -8,48 +8,30 @@
         <ul class="pagelist-wrapper">
 
           <li class="impression-item impression-viewed" data-post-id="69457967" v-for="item in items" :key="item._id">
-
             <div class="item-info">
               <a @click="blogDetail(item._id)" class="item-title" target="_blank">
                 {{item.title}}
               </a>
               <div class="item-album">
-
-
                 <a @click="blogDetail(item._id)" href="https://tuchong.com/16822941/69457967/" class="album-item" target="_blank" v-for="imgitem in item.img"><img :src="imgitem.url"></a>
-
-
-
                 <span class="hint">共4图</span>
-
               </div>
-
               <p class="item-desc">
                 {{item.intro}}
               </p>
-
             </div>
-
             <div class="item-related">
               <div class="item-tags has-tags">
                 <a @click="blogDetail(item._id)" v-for="tagitem in item.tag" data-popover-type="event" data-popover-id="865259" class="event-tag popover-action" target="_blank">{{tagitem.name}}</a>
 
               </div>
               <div class="item-handler">
-                <span>lenkaa_desu</span>
-
+                <span>{{item.photographer.name}}</span>
                 <span> |
-
-				113088阅读
-
-
-				· 2033喜欢
-
-
-				· 381评论
-
+				88阅读
+				· 33喜欢
+				· 1评论
 			</span>
-
               </div>
             </div>
           </li>
@@ -59,11 +41,6 @@
         <div class="pagelist-load-more" style="display: block;">加载更多</div>
         <i class="icon-end" style="display: none;"></i>
       </div>
-
-
-
-
-
       <aside class="vision-aside">
         <div>
           <h3 class="aside-title">预约反馈</h3>
@@ -79,7 +56,7 @@
           <h3 class="aside-title">摄影师</h3>
           <ul class="course-authorList vision-intro">
             <li class="course-author">
-              <a target="_blank" href="https://tuchong.com/1535376/" class="course-authorLink">
+              <a target="_blank"  class="course-authorLink">
                 <img class="course-authorIcon" src="https://sf1-tccdn-tos.pstatp.com/obj/tuchong-avatar/ll_1535376_5">
                 <i class="vip-right vip-blue"></i>
                 <span class="course-authorInfo">
@@ -88,7 +65,7 @@
               </a>
             </li>
             <li class="course-author">
-              <a target="_blank" href="https://tuchong.com/1853008/" class="course-authorLink">
+              <a target="_blank"  class="course-authorLink">
                 <img class="course-authorIcon" src="https://lf3-tccdn-tos.pstatp.com/obj/tuchong-avatar/ll_1853008_13">
                 <i class="vip-right vip-yellow"></i>
                 <span class="course-authorInfo">
@@ -97,7 +74,7 @@
               </a>
             </li>
             <li class="course-author">
-              <a target="_blank" href="https://thomaskksj.tuchong.com/" class="course-authorLink">
+              <a target="_blank"  class="course-authorLink">
                 <img class="course-authorIcon" src="https://lf1-tccdn-tos.pstatp.com/obj/tuchong-avatar/ll_395013_3">
                 <i class="vip-right vip-yellow"></i>
                 <span class="course-authorInfo">
@@ -106,7 +83,7 @@
               </a>
             </li>
             <li class="course-author">
-              <a target="_blank" href="https://tuchong.com/1046081/" class="course-authorLink">
+              <a target="_blank"  class="course-authorLink">
                 <img class="course-authorIcon" src="https://lf6-tccdn-tos.pstatp.com/obj/tuchong-avatar/ll_1046081_13">
                 <i class="vip-right vip-yellow"></i>
                 <span class="course-authorInfo">
@@ -115,7 +92,7 @@
               </a>
             </li>
             <li class="course-author">
-              <a target="_blank" href="https://hankai.tuchong.com/" class="course-authorLink">
+              <a target="_blank"  class="course-authorLink">
                 <img class="course-authorIcon" src="https://sf3-tccdn-tos.pstatp.com/obj/tuchong-avatar/ll_1428541_4">
                 <i class="vip-right vip-yellow"></i>
                 <span class="course-authorInfo">
@@ -124,7 +101,7 @@
               </a>
             </li>
             <li class="course-author">
-              <a target="_blank" href="https://tuchong.com/1163103/" class="course-authorLink">
+              <a target="_blank"  class="course-authorLink">
                 <img class="course-authorIcon" src="https://lf1-tccdn-tos.pstatp.com/obj/tuchong-avatar/ll_1163103_3">
                 <i class="vip-right vip-yellow"></i>
                 <span class="course-authorInfo">
@@ -133,7 +110,7 @@
               </a>
             </li>
             <li class="course-author">
-              <a target="_blank" href="https://tuchong.com/418362/" class="course-authorLink">
+              <a target="_blank"  class="course-authorLink">
                 <img class="course-authorIcon" src="https://sf1-tccdn-tos.pstatp.com/obj/tuchong-avatar/ll_418362_2">
                 <i class="vip-right vip-yellow"></i>
                 <span class="course-authorInfo">
@@ -142,7 +119,7 @@
               </a>
             </li>
             <li class="course-author">
-              <a target="_blank" href="https://amu2018.tuchong.com/" class="course-authorLink">
+              <a target="_blank"  class="course-authorLink">
                 <img class="course-authorIcon" src="https://lf6-tccdn-tos.pstatp.com/obj/tuchong-avatar/ll_364961_1">
                 <i class="vip-right vip-yellow"></i>
                 <span class="course-authorInfo">
@@ -151,7 +128,7 @@
               </a>
             </li>
             <li class="course-author">
-              <a target="_blank" href="https://yingye.tuchong.com/" class="course-authorLink">
+              <a target="_blank"  class="course-authorLink">
                 <img class="course-authorIcon" src="https://lf6-tccdn-tos.pstatp.com/obj/tuchong-avatar/ll_1059071_2">
                 <i class="vip-right vip-yellow"></i>
                 <span class="course-authorInfo">
@@ -167,7 +144,7 @@
           <h3 class="aside-title about-vision">关于彩蜂约拍</h3>
           <div class="vision-intro">
             成为摄影师的第一步，收录优秀摄影师。<br>
-            成为摄影师吧 <a target="_balnk" href="https://tuchong.com/1609261/">@加入</a> ，
+            成为摄影师吧 <a>@加入</a> ，
 
           </div>
         </div>
@@ -191,7 +168,7 @@
       },
 
       async fetch(){
-        const res = await this.$http.get('rest/theme')
+        const res = await this.$http.get('https://www.chakfung-ng.com/web/api/rest/theme')
         this.items = res.data
       },
     },
@@ -207,8 +184,9 @@
     top: 70px;
 
     width: 100%;
-
-    background-color: #eaeaea;
+    background-image: url(../assets/image/backgroundImg.jpg);
+    background-repeat: repeat;
+    /*background-color: #eaeaea;*/
     display: flex;
     justify-content: center;
 
@@ -229,6 +207,7 @@
           margin: 0;
 
           li {
+            cursor: pointer;
             padding: 32px 0 20px;
             border-top: 1px solid #eaeaea;
             font-size: 0;

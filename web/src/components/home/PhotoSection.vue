@@ -4,6 +4,7 @@
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="section-title">
+          <i class="iconfont icon-fire" style="font-size: 25px;color: red;padding-right: 10px"></i>
           <h2>图库</h2>
           <p>本系统提供图库的销售.</p>
         </div>
@@ -14,7 +15,7 @@
               <div class="img" style=" background-image: url(https://s1.tuchong.com/content-image/202101/bebff324eecf12c62fe6867d501b035f.jpg);"></div>
               <div class="info">
                 <span class="info-text">人物肖像</span>
-                <i class="iconfont icon-chakan"></i>
+                <i class="iconfont icon-eye"></i>
               </div>
             </a>
           </div>
@@ -24,7 +25,7 @@
                 <div class="img" style=" background-image: url(https://s1.tuchong.com/content-image/202101/2bbbbb3649e9f0d6039dd5667bf2a723.jpg);"></div>
                 <div class="info">
                   <span class="info-text">壮美风光</span>
-                  <i class="iconfont icon-chakan"></i>
+                  <i class="iconfont icon-eye"></i>
                 </div>
               </a>
             </div>
@@ -33,7 +34,7 @@
                 <div class="img" style=" background-image: url(https://s1.tuchong.com/content-image/202101/871b6975344150a11a851d91a5f5c1df.jpg);"></div>
                 <div class="info">
                   <span class="info-text">艺术创作</span>
-                  <i class="iconfont icon-chakan"></i>
+                  <i class="iconfont icon-eye"></i>
                 </div>
               </a>
             </div>
@@ -42,7 +43,7 @@
                 <div class="img" style=" background-image: url(https://s1.tuchong.com/content-image/202101/4aff0e281f3cc567933207addc8d859f.jpg);"></div>
                 <div class="info">
                   <span class="info-text">设计素材</span>
-                  <i class="iconfont icon-chakan"></i>
+                  <i class="iconfont icon-eye"></i>
                 </div>
               </a>
             </div>
@@ -52,7 +53,7 @@
               <div class="img" style=" background-image: url(https://s1.tuchong.com/content-image/202101/ab7b893ef2eb465533657d76decd2723.jpg);"></div>
               <div class="info">
                 <span class="info-text">儿童</span>
-                <i class="iconfont icon-chakan"></i>
+                <i class="iconfont icon-eye"></i>
               </div>
             </a>
           </div>
@@ -61,7 +62,7 @@
               <div class="img" style=" background-image: url(https://s1.tuchong.com/content-image/202101/b66f4a0a68faa3e76dd41a98e1eaff91.jpg);"></div>
               <div class="info">
                 <span class="info-text">艺术</span>
-                <i class="iconfont icon-chakan"></i>
+                <i class="iconfont icon-eye"></i>
               </div>
             </a>
           </div>
@@ -70,7 +71,7 @@
               <div class="img" style=" background-image: url(https://s1.tuchong.com/content-image/202101/d037d3fd7536bcb9cb2d56000eeffcf7.jpg);"></div>
               <div class="info">
                 <span class="info-text">纹理</span>
-                <i class="iconfont icon-chakan"></i>
+                <i class="iconfont icon-eye"></i>
               </div>
             </a>
           </div>
@@ -79,7 +80,7 @@
               <div class="img" style=" background-image: url(https://s1.tuchong.com/content-image/202101/714dd55a09129f9c490b94b459b416a5.jpg);"></div>
               <div class="info">
                 <span class="info-text">人文</span>
-                <i class="iconfont icon-chakan"></i>
+                <i class="iconfont icon-eye"></i>
               </div>
             </a>
           </div>
@@ -176,7 +177,7 @@
       height: 285px;
 
       &:hover {
-
+        cursor: pointer;
         .info {
           height: 100%;
           transition: all 0.2s ease;

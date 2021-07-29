@@ -5,7 +5,7 @@ import Home from '../views/Home.vue'
 import ClassGallery from '../components/gallery/ClassGallery.vue'
 import Gallery from '../views/Gallery.vue'
 import Login from '../views/Login.vue'
-
+import Community from '../views/Community.vue'
 
 import Blog from '../views/Blog'
 import BlogDetail from '../components/blog/BlogDetail'
@@ -78,6 +78,10 @@ const routes = [
         name: 'blog',
         component: Blog,
         meta: {isPublic: true},
+      },
+      {path: '/community',
+        name: 'community',
+        component: Community,
       }
       ,
       {path: '/appoint',
@@ -116,7 +120,7 @@ const routes = [
         props: true
       }
       ,
-      {path: '/me',
+      {path: 'me',
         name: 'me',
         component: Me,
 
@@ -164,8 +168,6 @@ const routes = [
             props: true
           }
           ,
-
-
           {
             path: 'countinfo',
             name: 'countinfo',
@@ -223,14 +225,7 @@ const routes = [
       },
     ]
   },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+
 ]
 
 
@@ -240,8 +235,6 @@ const router = new VueRouter({
   routes,
   //去掉url#
   mode: 'history',
-
-
 
 
 })

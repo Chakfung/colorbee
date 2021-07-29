@@ -2,25 +2,30 @@
 
   <div class="widget-courselist">
     <div class="panel-title">我的博客</div>
+    <div class="nodata" v-if="model.length===0"><img src="../../assets/image/me/nodata.png" alt="">暂无数据</div>
     <ul class="pagelist-wrapper">
 
-      <li class="impression-item impression-viewed" data-post-id="66420781" v-for="item in model" :key="item._id">
+      <li class="impression-item impression-viewed" data-post-id="66420781" v-for="item in model" :key="item._id" >
 
 
-        <a href="https://baixiaosheng.tuchong.com/t/66420781/" class="item-cover" target="_blank">
+        <a class="item-cover" target="_blank" @click="blogDetail(item._id)">
           <img :src="item.cover">
         </a>
         <div class="item-info" style="width: 450px;">
-          <a href="https://baixiaosheng.tuchong.com/t/66420781/" class="item-title"  target="_blank">{{item.title}}</a>
+          <a class="item-title"  target="_blank" @click="blogDetail(item._id)">{{item.title}}</a>
           <p class="item-desc">{{item.introduction}}</p>
         </div>
 
 
         <div class="item-related">
-          <div class="item-tags has-tags">
-            <a @click="blogDetail(item.theme._id)" v-for="tagitem in item.tag"   class="event-tag popover-action" >{{tagitem.name}}</a>
+          <div class="item-tags has-tags" v-if="item.tag">
+            <a  v-for="tagitem in item.tag"   class="event-tag popover-action" >{{tagitem.name}}</a>
           </div>
           <div class="item-handler">
+            <span>
+              <button class="cancel " @click="deleteBlog(item._id)">删除博客</button>
+
+			      </span>
             <span>{{item.author.name}}</span>
 
             <span> |
@@ -41,7 +46,6 @@
 
     </ul>
     <i class="icon-loading--yellow" style="display: none;"></i>
-    <div class="pagelist-load-more" style="display: block;">已经无数据了</div>
     <i class="icon-end" style="display: none;"></i>
   </div>
 </template>
@@ -56,19 +60,23 @@
       }
     },
     methods:{
+      async deleteBlog(id){
+        const res = await this.$http.delete(`rest/blog/${id}`)
+        this.$router.push('myblog')
+        this.$message({
+          type:'success',
+          message:'删除博客成功'
+        })
+        this.fetch()
+      },
+      blogDetail(id){
+        this.$router.push(`/blogdetail/${id}`)
+      },
       async fetch(){
-
         let res = await this.$http.get('/rest/blog')
-
-
         this.model = res.data.filter(obj=>{
-
-
           return obj.hasOwnProperty('author') && obj.author._id === this.id
         })
-
-
-
       },
     },
     created(){
@@ -82,14 +90,22 @@
 
 
   .widget-courselist {
-
-    padding: 34px 50px 0 30px;
-    border: 1px #d9d9d9 solid;
+    font-family: Lato, "Helvetica Neue", Arial, Helvetica, sans-serif;
+    padding: 20px;
+    border-radius: 10px;
+    .nodata {
+      width: 100%;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
     .panel-title {
       width: 100%;
       border-bottom: 1px #d9d9d9 solid;
       margin-bottom: 10px;
-      color:#ff5f5f;
+      color: #2063aa;
       font-size: 18px;
       font-family: 'PingFangSC','helvetica neue','hiragino sans gb','arial','microsoft yahei ui','microsoft yahei','simsun','sans-serif'!important;
       font-weight: bold;
@@ -100,10 +116,19 @@
       margin: 0;
 
       li {
-        padding: 32px 0 20px;
-        border-top: 1px solid #eaeaea;
+        margin-top: 20px;
+        padding: 20px;
+        box-shadow: 0 0 0 1px #d4d4d5, 0 2px 4px 0 rgba(34, 36, 38, 0.12),
+        0 2px 10px 0 rgba(34, 36, 38, 0.15);
+        border-radius: 5px;
         font-size: 0;
 
+        &:hover {
+          transform: translateY(-3px);
+          transition: all 0.1s ease;
+          box-shadow: 0 0 0 1px #d4d4d5, 0 2px 4px 0 rgba(34, 36, 38, 0.15),
+          0 2px 10px 0 rgba(34, 36, 38, 0.25);
+        }
         .item-cover {
           position: relative;
           display: inline-block;
@@ -194,10 +219,31 @@
           .item-handler {
             position: absolute;
             top: 3px;
-            right: 0;
+            right: 10px;
 
             span {
               color: #808388;
+              .cancel {
+                position: absolute;
+                top: -10px;
+                right: -95px;
+                height: 35px;
+                border: none;
+                display: flex;
+                align-items: center;
+                background-color: #428bca;
+                color: #fff;
+                font-size: 20px;
+                border-radius: 5px;
+                margin-left: 65px;
+                margin-bottom: 5px;
+                .icon-star {
+                  color: rgb(255, 255, 255);
+                }
+                &:hover {
+                  background-color: #2d5e8a;
+                }
+              }
             }
           }
         }

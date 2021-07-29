@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <h1>用户列表</h1>
+    <div class="head">用户列表</div>
     <el-table :data="items">
       <el-table-column prop="_id" label="ID" width="230">
       </el-table-column>
@@ -9,13 +9,11 @@
 
       <el-table-column prop="img" label="头像">
         <template slot-scope="scope">
-          <img :src="scope.row.avatar" alt="" style="height: 3rem">
+          <img :src="scope.row.avatar" alt="" style="height: 60px">
         </template>
       </el-table-column>
 
       <el-table-column prop="username" label="用户名" width="120">
-      </el-table-column>
-      <el-table-column prop="password" label="密码">
       </el-table-column>
       <el-table-column prop="type" label="类型">
       </el-table-column>
@@ -70,10 +68,26 @@
 
   };
 </script>
-
-<style scoped>
-
+<style scoped lang="scss">
+  .head {
+    border-left: 5px solid #09b4c5;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    background: #f2f2f2;
+    font-family: "microsoft yahei";
+    font-weight: 600;
+    color: #919191;
+  }
+  .block {
+    position: absolute;
+    bottom: 40px;
+    left: 50% ;
+    transform: translate(-50%, 0);
+  }
 </style>
+
+
 
 
 

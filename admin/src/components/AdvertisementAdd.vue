@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <h1>{{id? '编辑广告':'新增广告'}}</h1>
+    <div class="head">{{id? '编辑广告':'新增广告'}}</div>
     <el-form lable-width="120px" @submit.native.prevent="save">
 <!--      <el-form-item label="上级分类">-->
 <!--        <el-select v-model="model.parent">-->
@@ -9,14 +9,14 @@
 <!--      </el-form-item>-->
 
 
-      <el-form-item label="名称">
-        <el-input v-model="model.name"></el-input>
+      <el-form-item label="名称" lable-width="120px">
+        <el-input v-model="model.name" style="width:240px"></el-input>
       </el-form-item>
-      <el-form-item label="标语1">
-        <el-input v-model="model.slogan1"></el-input>
+      <el-form-item label="标语1" lable-width="120px">
+        <el-input v-model="model.slogan1" style="width:640px"></el-input>
       </el-form-item>
-      <el-form-item label="标语2">
-        <el-input v-model="model.slogan2"></el-input>
+      <el-form-item label="标语2" lable-width="120px">
+        <el-input v-model="model.slogan2" style="width:640px"></el-input>
       </el-form-item>
 
       <el-form-item label="图片">
@@ -90,6 +90,17 @@
 </script>
 
 <style scoped>
+  .head {
+    border-left: 5px solid #09b4c5;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    background: #f2f2f2;
+    font-family: "microsoft yahei";
+    font-weight: 600;
+    color: #919191;
+    margin-bottom: 15px;
+  }
   .ell{
     border: 1px dashed #d9d9d9;
     border-radius: 6px;

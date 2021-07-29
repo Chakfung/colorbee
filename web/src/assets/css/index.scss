@@ -41,7 +41,6 @@
   //导航
   .nav {
 
- 
     width: 500px;
 
     margin-right: 10%;
@@ -63,6 +62,13 @@
     }
 
   }
+}
+
+#topbar1 {
+  //display: none;
+  opacity: 0.8;
+  position: absolute;
+  z-index: 999;
 }
 
 #topbar2 {
@@ -87,8 +93,10 @@ $tabbar-height:70px;
 //登录背景
 .loginbg {
 
-
-
+  position: absolute;
+  top:70px;
+  z-index: -1;
+  width: 100%;
   overflow: hidden;
   height: calc(100vh - #{$tabbar-height});
 

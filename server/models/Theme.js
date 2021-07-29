@@ -10,6 +10,7 @@ const scheme = new mongoose.Schema({
     name: { type: String },
     url: { type: String },
   }],
+  date:{type:String},
   body:{type:String},
   price:{type:String},
   intro:{type:String},

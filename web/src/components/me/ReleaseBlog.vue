@@ -22,7 +22,16 @@
       <el-form-item label="简介" label-width="40px">
         <el-input v-model="model.introduction"></el-input>
       </el-form-item>
-
+      <el-form-item label="标签">
+        <el-select v-model="model.tag" multiple>
+          <el-option
+              v-for="item of tags"
+              :key="item._id"
+              :label="item.name"
+              :value="item._id"
+          ></el-option>
+        </el-select>
+      </el-form-item>
       <!--      npm install &#45;&#45;save vue2-editor-->
       <el-form-item label="详情" label-width="40px">
         <vue-editor v-model="model.body" useCustomImageHandler @image-added="handleImageAdded" ></vue-editor>
@@ -63,22 +72,26 @@
       return{
         model:{},
         parents:[],
-        user:{}
+        user:{},
+        tags:{}
       }
     },
     methods:{
       async fetchParents(){
         const res = await this.$http.get(`rest/category`)
         this.parents = res.data.filter(obj=>{
-          // console.log(obj);
-
-          return  obj.hasOwnProperty('parent') && obj.parent.name === '博客分类'
+        return  obj.hasOwnProperty('parent') && obj.parent.name === '博客分类'
         })
 
       },
+      async fetchTags(){
+        const res = await this.$http.get(`rest/category`)
+        this.tags = res.data.filter(obj=>{
+          // console.log(obj);
 
-
-
+          return  obj.hasOwnProperty('parent') && obj.parent.name === '标签分类'
+        })
+      },
       afterUpload(res){
         this.$set(this.model,'cover',res.url)
 
@@ -112,7 +125,7 @@
       },
     },
     created() {
-
+      this.fetchTags()
       this.model.author = localStorage.user
       this.fetchParents()
     }
@@ -123,12 +136,12 @@
 <style scoped lang="scss">
   .release {
     padding: 15px;
-    border: 1px #d9d9d9 solid;
+
     .panel-title {
       width: 100%;
       border-bottom: 1px #d9d9d9 solid;
       margin-bottom: 10px;
-      color:#ff5f5f;
+      color: #259;
       font-size: 18px;
       font-family: 'PingFangSC','helvetica neue','hiragino sans gb','arial','microsoft yahei ui','microsoft yahei','simsun','sans-serif'!important;
       font-weight: bold;

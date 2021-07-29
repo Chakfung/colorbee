@@ -1,15 +1,14 @@
 <template>
   <div>
-
+    <div :class="['shade',showFlag?'show':'']"></div>
+    <chat-box :class="[showFlag?'show':'']" @hide=hide()></chat-box>
     <div class="m-header">
-
       <el-header>
-
-        <div class="header-logo" >
+        <div class="header-logo">
         </div>
         <div class="header-text" >彩蜂摄影平台管理页面</div>
-
         <div class="header-fun" >
+          <i class="el-icon-s-comment" style="margin-right: 15px ;color: #fff; font-size: 25px" @click="showChat()"></i>
           <el-dropdown>
             <i class="el-icon-setting" style="margin-right: 15px ;color: #fff; font-size: 25px"></i>
             <el-dropdown-menu slot="dropdown">
@@ -17,26 +16,19 @@
               <el-dropdown-item>前端</el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
-
         </div>
       </el-header>
     </div>
 
-
-
-  <el-container style="height: 100vh; border: 1px solid #eee">
-
-
-
-
-
-    <el-aside width="200px" style="background-color: rgb(238, 241, 246)"  class="m-aside">
+  <el-container style="min-height: 940px;border: 1px solid #eee">
+    <el-aside width="200px" style="background-color: #fff"  class="m-aside">
       <el-menu router :default-openeds="open_list" unique-opened :default-active="$route.path" >
-
-        <el-submenu index="1" style="font-size: 25px">
-          <template slot="title"><i class="el-icon-message"></i>内容管理</template>
-
-
+        <el-menu-item index="/">
+          <i class="el-icon-pie-chart"></i>
+          <span slot="title">统计数据</span>
+        </el-menu-item>
+        <el-submenu index="2" style="font-size: 25px" open>
+          <template slot="title"><i class="el-icon-date"></i>内容管理</template>
 <!--          <el-menu-item-group>-->
 <!--            <template slot="title">用户管理</template>-->
 <!--            <el-menu-item index="/user/list">用户列表</el-menu-item>-->
@@ -63,8 +55,8 @@
 
         </el-submenu>
 
-        <el-submenu index="2">
-          <template slot="title"><i class="el-icon-menu"></i>用户管理</template>
+        <el-submenu index="3" collapse="true">
+          <template slot="title"><i class="el-icon-user"></i>用户管理</template>
           <el-menu-item-group>
             <template slot="title">普通用户管理</template>
             <el-menu-item index="/user/list">普通用户列表</el-menu-item>
@@ -87,8 +79,8 @@
 
 
 
-        <el-submenu index="3">
-          <template slot="title"><i class="el-icon-menu"></i>系统管理</template>
+        <el-submenu index="4">
+          <template slot="title"><i class="el-icon-setting"></i>系统管理</template>
           <el-menu-item-group>
             <template slot="title">分类管理</template>
             <el-menu-item index="/category/list">分类列表</el-menu-item>
@@ -101,8 +93,7 @@
           </el-menu-item-group>
           <el-menu-item-group>
             <template slot="title">订单管理</template>
-            <el-menu-item index="/order/list">未处理订单列表</el-menu-item>
-            <el-menu-item index="/order/list">已处理订单列表</el-menu-item>
+            <el-menu-item index="/order/list">订单列表</el-menu-item>
           </el-menu-item-group>
 
         </el-submenu>
@@ -112,7 +103,7 @@
       </el-menu>
     </el-aside>
 
-    <el-container style="background-color: #fcffec;">
+    <el-container style="background-color: #edf2f6;">
 
 
       <el-main class="m-card">
@@ -132,15 +123,25 @@
 </template>
 
 <script>
-
+  import ChatBox from '../components/ChatBox'
   export default {
     data() {
       return {
         open_list:['1'],
-        items:[]
+        items:[],
+        showFlag: false,
       }
     },
+    components: {
+      ChatBox
+    },
     methods:{
+      hide () {
+        this.showFlag = false
+      },
+      showChat () {
+        this.showFlag = true
+      },
       tologin(){
         this.$router.push('/login')
       }
@@ -166,9 +167,20 @@
   };
 </script>
 
-<style>
+<style lang="scss">
   @import '../assets/css/icofont/icofont.min.css';
   /*@import '../assets/css/style.css';*/
+  .shade {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.33);
+    display: none;
+    &.show {
+      display: block;
+    }
+  }
   .header-text{
     flex: 1;
     text-align: left;
@@ -177,6 +189,18 @@
     font-size: 20px;
 
   }
+  .el-menu-item-group {
+    .el-menu-item {
+      box-sizing: border-box;
+      border-left: 3px rgba(255, 250, 250, 0) solid;
+      &.is-active {
+        font-weight: 600;
+        color: #409EFF;
+        border-left: 3px #0038ff solid;
+      }
+    }
+  }
+
   .header-logo{
     background: url(../assets/image/logo.png) no-repeat;
     -webkit-background-size: 50px;
@@ -194,10 +218,11 @@
 
   .el-header {
     display: flex;
-    background-color: #1e88e5;
+    /*background-color: #1e88e5;*/
+    background-color: #09b4c5;
     color: #333;
     line-height: 60px;
-    box-shadow: 0px 2px 5px #000000;
+    box-shadow: 0px 1px 5px #686868;
   }
 
   .el-aside {
@@ -205,12 +230,14 @@
   }
   .m-card {
     border: 1px #bbe9ff solid;
-    background-color: #e1fcff;
+    background-color: #fff;
     border-radius: 10px;
     margin: 10px 10px;
+    max-height: 900px;
   }
   .m-aside {
     font-size: 25px;
     background-color: #000;
+
   }
 </style>

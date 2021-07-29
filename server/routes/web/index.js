@@ -37,7 +37,6 @@ module.exports = app => {
 
   router.get('/',  async (req, res) => {
 
-
     const queryOptions = {};
     let items=null;
 
@@ -50,8 +49,14 @@ module.exports = app => {
       items = await req.Model.find().populate('class').populate('author').populate('tag').limit(100)
     }else if(req.Model.modelName === 'BuyGallery'){
       items = await req.Model.find().populate('photo').populate('user').limit(100)
-    }
-    else{
+    }else if(req.Model.modelName === 'Share'){
+      items = await req.Model.find().populate('user').populate({
+        path: 'comment',
+        populate: {
+          path: 'user',
+        },
+      }).limit(100)
+    } else{
 
       if (req.Model.modelName === 'Category') {
         queryOptions.populate = 'parent'
@@ -70,6 +75,9 @@ module.exports = app => {
   router.get('/:id', async (req, res) => {
 
     let model=null;
+
+
+
 
     if(req.Model.modelName === 'Theme'){
       model = await req.Model.findById(req.params.id).populate('photographer').populate('parent').populate('tag').limit(100)
@@ -123,7 +131,8 @@ module.exports = app => {
 
           })
           .limit(100)
-    }else if(req.Model.modelName === 'CollectBlog') {
+    }
+    else if(req.Model.modelName === 'CollectBlog') {
 
       model = await req.Model.find({'user':{$eq:req.params.id}}).populate('user')
           .populate({
@@ -171,6 +180,10 @@ module.exports = app => {
   //   // model = req.body
   //   // res.send(model)
   // })
+
+  app.post('/web/api/page',async (req, res) => {
+    console.log('123');
+  })
 
   //登录
   app.post('/web/api/login', async (req, res) => {

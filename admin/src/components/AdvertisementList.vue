@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <h1>广告列表</h1>
+    <div class="head">广告列表</div>
     <el-table :data="items">
       <el-table-column prop="_id" label="ID" width="230">
       </el-table-column>
@@ -69,7 +69,16 @@
 </script>
 
 <style scoped>
-
+  .head {
+    border-left: 5px solid #09b4c5;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    background: #f2f2f2;
+    font-family: "microsoft yahei";
+    font-weight: 600;
+    color: #919191;
+  }
 </style>
 
 

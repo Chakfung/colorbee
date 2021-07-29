@@ -18,7 +18,7 @@
 
 
       <el-form-item label="密码" label-width="40px">
-        <el-input v-model="model.password"></el-input>
+        <el-input v-model="model.password" type="password"></el-input>
       </el-form-item>
 
 
@@ -90,12 +90,11 @@
 <style scoped lang="scss">
   .release {
     padding: 15px;
-    border: 1px #d9d9d9 solid;
     .panel-title {
       width: 100%;
       border-bottom: 1px #d9d9d9 solid;
       margin-bottom: 10px;
-      color:#ff5f5f;
+      color:#259;
       font-size: 18px;
       font-family: 'PingFangSC','helvetica neue','hiragino sans gb','arial','microsoft yahei ui','microsoft yahei','simsun','sans-serif'!important;
       font-weight: bold;

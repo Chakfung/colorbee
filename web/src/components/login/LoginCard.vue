@@ -17,11 +17,11 @@
       <div class="row">
         <div  class="login-form bg-opacity-black-70">
           <p class="form-row pd-right mt-50 input-size">
-            <label for="username" style="color: white">Username or email <span class="required">*</span></label>
+            <label for="username" style="color: white">用户名<span class="required">*</span></label>
             <input type="text" name="username" id="username" class="form-controller" v-model="model.username">
           </p>
           <p class="form-row pd-left input-size">
-            <label for="password" style="color: white">Passwords <span class="required">*</span></label>
+            <label for="password" style="color: white">密码 <span class="required">*</span></label>
             <input type="password" name="password" id="password" class="form-controller" v-model="model.password">
           </p>
           <p class="form-row ">
@@ -31,7 +31,7 @@
             </label>
           </p>
           <p class="lost_password mb-60">
-            <a href="#" style="color: white" @click="goRegister()">want to register?</a>
+            <a href="#" style="color: white" @click="goRegister()">想要注册?</a>
           </p>
         </div>
       </div>
@@ -113,6 +113,11 @@
   }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+.login-form {
+  border-radius: 5px ;
+  input {
+    border-radius: 5px ;
+  }
+}
 </style>

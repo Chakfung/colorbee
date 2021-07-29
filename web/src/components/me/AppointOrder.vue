@@ -1,16 +1,16 @@
 <template>
   <div class="widget-courselist" >
     <div class="panel-title">预约订单</div>
+    <div class="nodata" v-if="model.length===0"><img src="../../assets/image/me/nodata.png" alt="">暂无数据</div>
     <ul class="pagelist-wrapper" v-if="model">
-
       <li class="impression-item impression-viewed" data-post-id="69457967" v-for="item in model">
-
+        <button @click="deleteOrder(item._id)" class="cancel">取消订单</button>
         <div class="item-info">
           <a @click="blogDetail(item.theme._id)"  class="item-title" >
             {{item.theme.title}}
           </a>
-          <div class="item-album">
 
+          <div class="item-album">
 
             <a href="https://tuchong.com/16822941/69457967/" class="album-item" target="_blank" v-for="imgitem in item.theme.img"><img :src="imgitem.url"></a>
 
@@ -25,7 +25,6 @@
         </div>
 
         <div class="item-related">
-          {{item.theme.tag[0].name}}
           <div class="item-tags has-tags">
             <a @click="blogDetail(item.theme._id)" v-for="tagitem in item.theme.tag"   class="event-tag popover-action" >{{tagitem.name}}</a>
           </div>
@@ -38,7 +37,7 @@
             <div class="name">{{item.theme.photographer.name}}</div>
           </div>
           <div class="photographer">
-            <span>地址:</span>
+            <span>地点:</span>
             <div class="name">{{item.address}}</div>
           </div>
           <div class="photographer">
@@ -47,7 +46,7 @@
           </div>
           <div class="photographer">
             <span>日期:</span>
-            <div class="name">{{item.date}}</div>
+            <div class="name">{{item.date.split('T')[0]}}</div>
           </div>
         </div>
 
@@ -66,8 +65,17 @@
         id:{}
       }
     },
-    methods:{
 
+    methods:{
+      async deleteOrder(id){
+        const res = await this.$http.delete(`rest/appoint_orders/${id}`)
+        this.$router.push('appointorder')
+        this.$message({
+          type:'success',
+          message:'取消成功'
+        })
+        this.fetch()
+      },
       blogDetail(id){
         this.$router.push(`/appointdetail/${id}`)
       },
@@ -88,16 +96,25 @@
 <style lang="scss" scoped>
 
   .widget-courselist {
-
-    padding: 20px 50px 0 30px;
-    border: 1px #d9d9d9 solid;
+    font-family: Lato, "Helvetica Neue", Arial, Helvetica, sans-serif;
+    padding: 20px;
+    border-radius: 10px;
+    .nodata {
+      font-weight: 600;
+      color: #484848;
+      width: 100%;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
     .panel-title {
       width: 100%;
       border-bottom: 1px #d9d9d9 solid;
       margin-bottom: 10px;
-      color:#ff5f5f;
+      color: #2063aa;
       font-size: 18px;
-      font-family: 'PingFangSC','helvetica neue','hiragino sans gb','arial','microsoft yahei ui','microsoft yahei','simsun','sans-serif'!important;
       font-weight: bold;
     }
     .pagelist-wrapper {
@@ -106,10 +123,36 @@
       margin: 0;
 
       li {
-        padding: 32px 0 20px;
-        border-top: 1px solid #eaeaea;
+        position: relative;
+        margin-top: 20px;
+        padding: 20px;
+        box-shadow: 0 0 0 1px #d4d4d5, 0 2px 4px 0 rgba(34, 36, 38, 0.12),
+        0 2px 10px 0 rgba(34, 36, 38, 0.15);
+        border-radius: 5px;
         font-size: 0;
-
+        .cancel {
+          z-index: 99;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          height: 35px;
+          border: none;
+          display: flex;
+          align-items: center;
+          background-color: #428bca;
+          color: #fff;
+          font-size: 20px;
+          border-radius: 5px;
+          &:hover {
+            background-color: #2d5e8a;
+          }
+        }
+        &:hover {
+          transform: translateY(-3px);
+          transition: all 0.1s ease;
+          box-shadow: 0 0 0 1px #d4d4d5, 0 2px 4px 0 rgba(34, 36, 38, 0.15),
+          0 2px 10px 0 rgba(34, 36, 38, 0.25);
+        }
         .item-cover {
           position: relative;
           display: inline-block;
@@ -125,11 +168,13 @@
         }
 
         .item-info {
+          position: relative;
           display: inline-block;
           width: 100%;
           vertical-align: top;
           font-size: 14px;
           overflow: hidden;
+
 
           .item-album {
             position: relative;
@@ -206,7 +251,7 @@
               display: inline-block;
               height: 22px;
               padding: 0 12px;
-              border: 1px solid #e3e4e6;
+              border: 1px rgb(1, 196, 98) solid;
               -webkit-border-radius: 11px;
               -moz-border-radius: 11px;
               border-radius: 11px;
@@ -233,19 +278,14 @@
 
           .photographer {
             width: 100%;
-
-
-
             font-size: 18px;
-
             span {
-
               display: inline-block;
               height: 100%;
               line-height: 50px;
-
+              font-weight: bold;
+              color: #666666;
             }
-
             img {
               margin-left: 20px;
               width: 50px;
@@ -255,7 +295,8 @@
             .name {
               display: inline-block;
               margin-left: 20px;
-              font-size: 18px;
+              font-size: 14px;
+              color: #8e8e8e;
             }
 
           }

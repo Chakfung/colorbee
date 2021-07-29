@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <h1>{{id? '编辑图片':'新增图片'}}</h1>
+    <div class="head">{{id? '编辑图片':'新增图片'}}</div>
     <div  class="m-content">
       <el-form lable-width="120px" @submit.native.prevent="save">
   <!--      <el-form-item label="上级分类">-->
@@ -134,18 +134,16 @@
 </script>
 
 <style scoped>
-  /*.m-dolalr {*/
-  /*  position: absolute;*/
-  /*  z-index: 999;*/
-  /*  padding: 0 10px;*/
-  /*  border-right: 1px #dcdfe6 solid;*/
-  /*  color: #707276;*/
-  /*  margin-right: 10px;*/
-  /*}*/
-  /*.m-input {*/
-  /*  padding-left: 10px;*/
-  /*  margin-left: 0px;*/
-  /*}*/
+  .head {
+    border-left: 5px solid #09b4c5;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    background: #f2f2f2;
+    font-family: "microsoft yahei";
+    font-weight: 600;
+    color: #919191;
+  }
   .main-flex{
     display: flex;
   }

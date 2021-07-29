@@ -30,13 +30,13 @@
 
               <span> |
 
-				25926阅读
+				26阅读
 
 
-				· 553喜欢
+				· 3喜欢
 
 
-				· 68评论
+				· 8评论
 
 			</span>
 
@@ -69,7 +69,7 @@
           <h3 class="aside-title">博客作者</h3>
           <ul class="course-authorList vision-intro">
             <li class="course-author">
-              <a target="_blank" href="https://tuchong.com/1535376/" class="course-authorLink">
+              <a target="_blank"  class="course-authorLink">
                 <img class="course-authorIcon" src="https://sf1-tccdn-tos.pstatp.com/obj/tuchong-avatar/ll_1535376_5">
                 <i class="vip-right vip-blue"></i>
                 <span class="course-authorInfo">
@@ -78,7 +78,7 @@
               </a>
             </li>
             <li class="course-author">
-              <a target="_blank" href="https://tuchong.com/1853008/" class="course-authorLink">
+              <a target="_blank"  class="course-authorLink">
                 <img class="course-authorIcon" src="https://lf3-tccdn-tos.pstatp.com/obj/tuchong-avatar/ll_1853008_13">
                 <i class="vip-right vip-yellow"></i>
                 <span class="course-authorInfo">
@@ -87,7 +87,7 @@
               </a>
             </li>
             <li class="course-author">
-              <a target="_blank" href="https://thomaskksj.tuchong.com/" class="course-authorLink">
+              <a target="_blank"  class="course-authorLink">
                 <img class="course-authorIcon" src="https://lf1-tccdn-tos.pstatp.com/obj/tuchong-avatar/ll_395013_3">
                 <i class="vip-right vip-yellow"></i>
                 <span class="course-authorInfo">
@@ -96,7 +96,7 @@
               </a>
             </li>
             <li class="course-author">
-              <a target="_blank" href="https://tuchong.com/1046081/" class="course-authorLink">
+              <a target="_blank"  class="course-authorLink">
                 <img class="course-authorIcon" src="https://lf6-tccdn-tos.pstatp.com/obj/tuchong-avatar/ll_1046081_13">
                 <i class="vip-right vip-yellow"></i>
                 <span class="course-authorInfo">
@@ -105,7 +105,7 @@
               </a>
             </li>
             <li class="course-author">
-              <a target="_blank" href="https://hankai.tuchong.com/" class="course-authorLink">
+              <a target="_blank"  class="course-authorLink">
                 <img class="course-authorIcon" src="https://sf3-tccdn-tos.pstatp.com/obj/tuchong-avatar/ll_1428541_4">
                 <i class="vip-right vip-yellow"></i>
                 <span class="course-authorInfo">
@@ -114,7 +114,7 @@
               </a>
             </li>
             <li class="course-author">
-              <a target="_blank" href="https://tuchong.com/1163103/" class="course-authorLink">
+              <a target="_blank"  class="course-authorLink">
                 <img class="course-authorIcon" src="https://lf1-tccdn-tos.pstatp.com/obj/tuchong-avatar/ll_1163103_3">
                 <i class="vip-right vip-yellow"></i>
                 <span class="course-authorInfo">
@@ -123,7 +123,7 @@
               </a>
             </li>
             <li class="course-author">
-              <a target="_blank" href="https://tuchong.com/418362/" class="course-authorLink">
+              <a target="_blank"  class="course-authorLink">
                 <img class="course-authorIcon" src="https://sf1-tccdn-tos.pstatp.com/obj/tuchong-avatar/ll_418362_2">
                 <i class="vip-right vip-yellow"></i>
                 <span class="course-authorInfo">
@@ -132,7 +132,7 @@
               </a>
             </li>
             <li class="course-author">
-              <a target="_blank" href="https://amu2018.tuchong.com/" class="course-authorLink">
+              <a target="_blank"  class="course-authorLink">
                 <img class="course-authorIcon" src="https://lf6-tccdn-tos.pstatp.com/obj/tuchong-avatar/ll_364961_1">
                 <i class="vip-right vip-yellow"></i>
                 <span class="course-authorInfo">
@@ -141,7 +141,7 @@
               </a>
             </li>
             <li class="course-author">
-              <a target="_blank" href="https://yingye.tuchong.com/" class="course-authorLink">
+              <a target="_blank"  class="course-authorLink">
                 <img class="course-authorIcon" src="https://lf6-tccdn-tos.pstatp.com/obj/tuchong-avatar/ll_1059071_2">
                 <i class="vip-right vip-yellow"></i>
                 <span class="course-authorInfo">
@@ -157,7 +157,7 @@
           <h3 class="aside-title about-vision">关于彩蜂博客</h3>
           <div class="vision-intro">
             成为摄影师的第一步，收录全站优秀博客。<br>
-            投稿请成为摄影师 <a target="_balnk" href="https://tuchong.com/1609261/">@加入</a> ，
+            投稿请成为摄影师 <a>@加入</a> ，
 
           </div>
         </div>
@@ -197,8 +197,11 @@
     top: 70px;
 
     width: 100%;
-
-    background-color: #eaeaea;
+    background-image: url(../assets/image/backgroundImg.jpg);
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    background-repeat: repeat;
+    /*background-color: #eaeaea;*/
     display: flex;
     justify-content: center;
 
@@ -219,6 +222,7 @@
           margin: 0;
 
           li {
+            cursor: pointer;
             padding: 32px 0 20px;
             border-top: 1px solid #eaeaea;
             font-size: 0;

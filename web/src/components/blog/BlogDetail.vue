@@ -1,6 +1,6 @@
 <template>
   <div class="frame">
-    <div class="collect" @click="collectBlog(model._id)">收藏</div>
+    <div class="collect" @click="collectBlog(model._id)">收藏 <i class="iconfont icon-star"></i></div>
     <div class="main" v-if="model">
       <div class="title">
         {{model.title}}
@@ -43,6 +43,7 @@
         let res
         res = await this.$http.post('rest/collect_blogs',this.collect)
 
+        console.log(res);
         this.$message({
           type:'success',
           message:'收藏博客成功'
@@ -89,7 +90,10 @@
       justify-content: center;
       align-content: space-around;
       font-size: 20px;
-
+      i {
+        position: absolute;
+        top: 65px;
+      }
       &:hover {
         background-color: #2d5e8a;
       }
@@ -109,6 +113,7 @@
 
       }
       .intro {
+        margin-top: 15px;
         text-align: center;
       }
       .cover {

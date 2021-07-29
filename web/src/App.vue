@@ -13,6 +13,11 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+  #app {
+    background-image: url(assets/image/backgroundImg.jpg);
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    
+  }
 </style>

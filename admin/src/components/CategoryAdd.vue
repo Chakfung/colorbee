@@ -1,7 +1,7 @@
 <template>
   <div class="">
-    <h1>{{id? '编辑分类':'新增分类'}}</h1>
-    <el-form label-width="120px" @submit.native.prevent="save">
+    <div class="head">{{id? '编辑分类':'新增分类'}}</div>
+    <el-form label-width="70px" @submit.native.prevent="save">
       <el-form-item label="上级分类">
         <el-select v-model="model.parent">
           <el-option v-for="item in parents" :key="item._id"
@@ -9,7 +9,7 @@
         </el-select>
       </el-form-item>
       <el-form-item label="名称">
-        <el-input v-model="model.name"></el-input>
+        <el-input v-model="model.name" style="width: 220px"></el-input>
       </el-form-item>
       <el-form-item>
         <el-button type="primary" native-type="submit">保存</el-button>
@@ -69,6 +69,16 @@
 </script>
 
 <style scoped>
-
+  .head {
+    border-left: 5px solid #09b4c5;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    background: #f2f2f2;
+    font-family: "microsoft yahei";
+    font-weight: 600;
+    color: #919191;
+    margin-bottom: 15px;
+  }
 </style>
 

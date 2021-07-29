@@ -8,10 +8,14 @@
           <li><a @click="goGallery()">图库</a></li>
           <li><a @click="goAppoint()">拍摄</a></li>
           <li><a @click="goBlog()">博客</a></li>
+          <li><a @click="goCommunity()">社区</a></li>
           <li><a @click="goMe()">我的</a></li>
           <li><a @click="goLogin()">登录</a></li>
         </ul>
 
+      </div>
+      <div class="avatar-profile"   v-if="userid">
+        <img :src="user.avatar" alt="">
       </div>
     </header>
     <header class="header" id="topbar2">
@@ -22,6 +26,7 @@
           <li><a @click="goGallery()">图库</a></li>
           <li><a @click="goAppoint()">拍摄</a></li>
           <li><a @click="goBlog()">博客</a></li>
+          <li><a @click="goCommunity()">社区</a></li>
           <li><a @click="goMe()">我的</a></li>
           <li><a @click="goLogin()">登录</a></li>
         </ul>
@@ -47,45 +52,20 @@
     });
   });
 
-
-  // $(function(){
-  //   $(window).scroll(function(){
-  //     if($(window).scrollTop()<=100){
-  //       // $("header").css({"position":"static"});
-  //       $("header").fadeIn(0)
-  //
-  //     }else if($(window).scrollTop()>100 && $(window).scrollTop()<250){
-  //       $("header").fadeOut(0)
-  //
-  //     } else if($(window).scrollTop()>=250){
-  //       // $("header").css({"position":"static"});
-  //       $("header").css({"position":"fixed","top":0,"width":"100%","-webkit-animation":"1s"});
-  //       $("header").fadeIn(1000)
-  //
-  //     }
-  //   });
-  // });
   export default {
     name: "Main",
     data(){
       return{
-        path:''
+        path:'',
+        user: {},
+        userid:''
       }
     },
     computed:{
-      // changeCssOfHeader () {
-      //   // if(this.path=='/gallery'){
-      //   //   console.log('111');
-      //   //   $(".header").css({"background":"rgba(255, 255, 255, 0.75)","position":"absolute","z-index":"999"});
-      //   // }else {
-      //   //   console.log('222');
-      //   //   $(".header").css({"background":"rgb(255,255,255)","position":"static","z-index":"999"});
-      //   }
-      // }
+
     },
     mounted() {
       window.onload = function () {
-        console.log(window.sessionStorage["ISlogin"]);
         if (!window.sessionStorage["ISlogin"]) {
           // 关闭浏览器
           window.localStorage.removeItem("token");
@@ -122,42 +102,60 @@
         this.$router.push('/blog')
         this.path = this.$route.path
       },
+      goCommunity() {
+        this.$router.push('/community')
+        this.path = this.$route.path
+      },
       goLogin(){
         this.$router.push('/login')
         this.path = this.$route.path
       },
-
+      async fetchUser(){
+        const res = await this.$http.get(`rest/user/${this.userid}`)
+        this.user = res.data
+      },
     },
-
-
-    beforeUpdate(){
-      if (this.path === '/gallery') {
-        $(".header").css({"background": "rgba(255, 255, 255, 0.75)", "position": "absolute", "z-index": "999"});
-      }
-      if (this.path === '/login/log') {
-        $("#topbar2").css({"display": "none", "position": "fixed", "top": "0", "transition": "0s"});
-        $(".header").css({"background": "rgb(255,255,255)", "position": "static", "z-index": "999"});
-      }
-      if(this.path != '/login' && this.path != '/gallery') {
-        $(".header").css({"background": "rgb(255,255,255)", "position": "static", "z-index": "999"});
+    created () {
+      if(localStorage.user) {
+        this.userid =localStorage.user
+        this.fetchUser()
       }
     },
-
+    mounted () {
+      if(localStorage.user) {
+        this.userid = localStorage.user
+        this.fetchUser()
+      }
+    }
   }
 
 </script>
 
 <style lang="scss">
+  .avatar-profile {
+    position: absolute;
+    right: 100px;
+    top: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px ;
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+    }
+  }
   .nav {
     li {
-
       font-size: 18px;
       &:hover {
         cursor: pointer;
         color: #42b983;
-
       }
     }
+  }
+  #topbar2 {
+    position: fixed;
   }
 
 </style>

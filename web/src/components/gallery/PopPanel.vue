@@ -4,14 +4,14 @@
 
       <div class="close">
         <a  @click="closepop()">
-          <i class=" iconfont icon-baseline-close-px"></i>
+          <i class=" iconfont icon-close"></i>
         </a>
       </div>
 
       <div class="content" v-if="this.pop">
         <div class="pic">
 
-          <img :src="this.pop.img" alt="">
+          <img :src="pop.img" alt="">
           <!--            //weiliicimg6.pstatp.com/weili/sm/1068392837436801163.webp
           https://weiliicimg1.pstatp.com/weili/l/820554584299274259.webp
           -->
@@ -21,10 +21,10 @@
         <div class="detail__right">
           <div class="detail__info-section">
             <p title="卡通2021年牛年新年春节喜庆元旦年货节送礼红包" class="detail__title">
-              {{this.pop.name}}
+              {{pop.name}}
             </p>
             <p title="" class="detail__intro">
-              {{this.pop.intro}}
+              {{pop.intro}}
             </p>
             <p title=" " class="detail__remark">
 
@@ -36,7 +36,7 @@
                 21.1MB
               </p><!----><p class="detail__info-row usage"><label>用途</label><span>商业用途，可用于营利性的商业、广告目的</span></p>
               <p class="detail__info-row auth"><label>价格</label><span>
-                ￥{{this.pop.price}}
+                ￥{{pop.price}}
               </span><!----></p>
               <p class="detail__info-row photographer-row"><label>署名</label><span class="photographer-row__content"><a
                   href="/s/RDn1mX" target="_blank" class="photographer-row__photographer">
@@ -133,7 +133,7 @@
                         transform="rotate(45 10.505 11.579)"></rect>
                 </g>
               </svg><!----></div>
-            <div class="detail__colorbtn" style="width: 82px; padding: 0px; margin-left: 7px;" @click="buyPhoto()">
+            <div class="detail__colorbtn" style="width: 82px; padding: 0px; margin-left: 7px;" @click="buyPhoto(pop)">
               <svg xmlns="http://www.w3.org/2000/svg" width="31" height="20" viewBox="0 0 31 20"
                    style="filter: invert(100%);">
                 <g fill="#000" fill-rule="evenodd">
@@ -190,9 +190,10 @@
   export default {
     name: "PopPanel",
     methods:{
-      async buyPhoto(){
-        this.model.photo = this.pop._id
-        this.model.user = this.user._id
+      async buyPhoto(pop){
+        this.model.photo = pop._id
+        this.model.user = this.user
+        console.log(this.model);
         const res = await this.$http.post('rest/buy_gallerys',this.model)
         this.$message({
           type:'success',
@@ -224,7 +225,6 @@
 
 <style scoped lang="scss">
   .white_content {
-
     display: none;
     position: fixed;
     top: 50%;
@@ -261,6 +261,7 @@
           text-decoration: none;
 
           &:hover {
+            cursor: pointer;
             color: black;
           }
         }
@@ -292,8 +293,8 @@
           position: relative;
 
           img {
-            max-width:100%;
-            height:450px;
+            max-width:800px;
+            height:550px;
             object-fit:cover;
           }
 

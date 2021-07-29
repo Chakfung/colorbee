@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <h1>{{id? '编辑主题':'新增主题'}}</h1>
+    <div class="head">{{id? '编辑主题':'新增主题'}}</div>
     <el-form lable-width="120px" @submit.native.prevent="save">
 <!--      <el-form-item label="上级分类">-->
 <!--        <el-select v-model="model.parent">-->
@@ -98,10 +98,18 @@
       }
     },
     methods:{
+      getDate () {
+        var nowDate = new Date();
+        var year = nowDate.getFullYear();
+        var month = nowDate.getMonth() + 1 < 10 ? "0" + (nowDate.getMonth() + 1)
+            : nowDate.getMonth() + 1;
+        var day = nowDate.getDate() < 10 ? "0" + nowDate.getDate() : nowDate
+            .getDate();
+        var dateStr = year + "-" + month + "-" + day;
+        return dateStr
+      },
       afterUpload(res){
-
         this.img.push({name:res.originalname,url:res.url})
-
       },
       handleRemove(file, fileList) {
         console.log(file, fileList);
@@ -125,6 +133,7 @@
       },
 
       async save(){
+        this.model.date = this.getDate()
         this.$set(this.model,'img',this.img)
         let res
         if(this.id){
@@ -177,6 +186,17 @@
 </script>
 
 <style scoped>
+  .head {
+    border-left: 5px solid #09b4c5;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    background: #f2f2f2;
+    font-family: "microsoft yahei";
+    font-weight: 600;
+    color: #919191;
+    margin-bottom: 15px;
+  }
   .ell{
     border: 1px dashed #d9d9d9;
     border-radius: 6px;
